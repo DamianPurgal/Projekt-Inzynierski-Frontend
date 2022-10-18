@@ -1,7 +1,8 @@
-<p>
+<p style="margin-bottom:0px;">
   <mat-toolbar color="primary">
-    <mat-icon class="logo-icon">dashboard</mat-icon>
-    <span class="logo">Demor</span>
+
+    <mat-icon class="logo-icon" mat-icon-button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">dashboard</mat-icon>
+    <span class="logo" mat-icon-button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Demor</span>
 
     <button mat-button color="basic">Tablice</button>
 
@@ -9,7 +10,7 @@
     <!-- <button mat-icon-button>
       <mat-icon>verified_user</mat-icon>
     </button> -->
-    <button mat-icon-button >
+    <button mat-icon-button routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
       <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar>
