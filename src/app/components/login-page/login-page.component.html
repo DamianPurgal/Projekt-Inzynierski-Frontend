@@ -2,12 +2,15 @@
 <div class="login-page">
   <div class="login-panel">
     <p class="login-text">Login</p>
-    <mat-icon class="login-icon">dashboard</mat-icon>
+    <div class="login-icon-container">
+      <mat-spinner *ngIf="isLoading" class="loading-icon" [@enterAnimation] [diameter]="130"></mat-spinner>
+      <mat-icon class="login-icon" *ngIf="!isLoading" [@enterAnimation]>dashboard</mat-icon>
+    </div>
 
     <p class="aligned-to-center">
       <mat-form-field appearance="outline" class="form-input">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="myEmail123@gmail.com">
+        <input matInput placeholder="myEmail123@gmail.com" #usernameInput>
         <mat-icon matSuffix style="color: #673ab7;">alternate_email</mat-icon>
       </mat-form-field>
     </p>
@@ -15,7 +18,7 @@
     <p class="aligned-to-center">
       <mat-form-field appearance="outline" class="form-input">
         <mat-label>Password</mat-label>
-        <input matInput [type]="passwordHide ? 'password' : 'text'">
+        <input matInput [type]="passwordHide ? 'password' : 'text'" (keydown.enter)="login()" #passwordInput>
         <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
           <mat-icon style="color: #673ab7;">{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
@@ -25,7 +28,7 @@
     <div class="buttons">
         <button mat-stroked-button color="primary" class="button">register</button>
       <span class="spacer"></span>
-        <button mat-raised-button color="primary" class="button">login</button>
+        <button mat-raised-button color="primary" class="button" (click)="login()">Login</button>
     </div>
 
 

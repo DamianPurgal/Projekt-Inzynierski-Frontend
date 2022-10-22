@@ -1,9 +1,5 @@
-.login-page {
-  width:100%;
-  height: 100%;
-  background: linear-gradient(0deg, hsla(102, 75%, 49%, 1) 0%, hsla(202, 75%, 49%, 1) 100%);
-}
 .login-panel {
+  margin-top:80px;
   width: 600px;
   height: 640px;
   margin-left: auto;
@@ -23,6 +19,9 @@
   background: -webkit-linear-gradient(#884cef, #421f80);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.login-icon-container {
+  min-height:260px;
 }
 .login-text {
   color: #673ab7;
@@ -57,4 +56,9 @@
   height:40px;
   width: 90px;
   font-size: 17px;
+}
+.loading-icon {
+  margin-left: auto;
+  margin-right: auto;
+  top:50px;
 }

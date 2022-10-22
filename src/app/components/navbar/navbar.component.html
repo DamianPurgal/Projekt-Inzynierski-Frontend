@@ -10,7 +10,16 @@
     <!-- <button mat-icon-button>
       <mat-icon>verified_user</mat-icon>
     </button> -->
-    <button mat-icon-button routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <button mat-icon-button routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="!isUserLogged">
+      <mat-icon>vpn_key</mat-icon>
+    </button>
+
+
+    <button mat-icon-button routerLink="/userinfo" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="isUserLogged">
+      <mat-icon>person_outline</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="logout()" color="primary" style="color:white;" *ngIf="isUserLogged">
       <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar>
