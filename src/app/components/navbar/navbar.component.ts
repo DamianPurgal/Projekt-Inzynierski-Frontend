@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtAuthService } from 'src/app/services/authentication/jwt-auth.service';
+import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 
 @Component({
@@ -28,7 +29,8 @@ export class NavbarComponent implements OnInit {
     this.notificationService.displayNotification(
       {
         message: "Logged out"
-      }
+      },
+      NotificationType.INFO
     );
   }
 

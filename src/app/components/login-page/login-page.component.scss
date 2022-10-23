@@ -20,6 +20,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.link-text {
+  height:40px;
+  width: 90px;
+  font-size: 17px;
+  color: #673ab7;
+  font-weight: 800;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  letter-spacing: 1px;
+}
 .login-icon-container {
   min-height:260px;
 }
@@ -41,14 +52,14 @@
   margin-right: auto;
 }
 .buttons {
-  width:450px;
+  width:440px;
   margin-top:20px;
   margin-right: auto;
   margin-left: auto;
   align-items: center;
 }
 .spacer {
-  width:250px;
+  width:220px;
   height:10px;
   display: inline-block;
 }

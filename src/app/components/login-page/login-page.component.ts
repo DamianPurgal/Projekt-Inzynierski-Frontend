@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, Observable, tap } from 'rxjs';
 import { JwtToken } from 'src/app/services/authentication/interfaces/jwt-token';
 import { JwtAuthService } from 'src/app/services/authentication/jwt-auth.service';
+import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 
 @Component({
@@ -27,7 +28,7 @@ export class LoginPageComponent implements OnInit {
   private usernameInputElement!: ElementRef<HTMLInputElement>;
 
   @ViewChild('passwordInput')
-  private passwordInputelement!: ElementRef<HTMLInputElement>;
+  private passwordInputElement!: ElementRef<HTMLInputElement>;
 
   private jwtToken!: Observable<JwtToken>;
 
@@ -41,15 +42,16 @@ export class LoginPageComponent implements OnInit {
     this.isLoading = true;
     this.jwtAuthService.authenticate(
       this.usernameInputElement.nativeElement.value,
-      this.passwordInputelement.nativeElement.value
+      this.passwordInputElement.nativeElement.value
       ).pipe(
         tap(() => (this.isLoading = false)),
         catchError((error) => {
           this.isLoading = false;
           this.notificationService.displayNotification(
             {
-              message: "Authentication failed. Wrong username or password!"
-            }
+              message: "Authentication failed. Wrong username or password!",
+            },
+            NotificationType.WARNING
           );
           throw new Error("Auth error");
         })
@@ -60,7 +62,8 @@ export class LoginPageComponent implements OnInit {
           this.notificationService.displayNotification(
             {
               message: "Logged in"
-            }
+            },
+            NotificationType.INFO
           );
       });
   }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, Observable } from 'rxjs';
 import { JwtToken } from './interfaces/jwt-token';
+import { UserRegistrationDto } from './interfaces/user-registration-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import { JwtToken } from './interfaces/jwt-token';
 export class JwtAuthService {
 
   private loginURL: string = 'http://localhost:8080/login'
+
+  private registerURL: string = 'http://localhost:8080/api/users'
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
@@ -33,4 +36,9 @@ export class JwtAuthService {
   logoutUser() {
     sessionStorage.removeItem("username");
   }
+
+  registerUser(userRegistrationDto: UserRegistrationDto) : Observable<any> {
+    return this.http.post<any>(this.registerURL, userRegistrationDto);
+  }
+
 }

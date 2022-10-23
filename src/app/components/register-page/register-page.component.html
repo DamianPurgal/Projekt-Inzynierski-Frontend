@@ -1,1 +1,64 @@
-<p>register-page works!</p>
+
+<div class="login-page">
+  <div class="login-panel">
+    <p class="login-text">Register</p>
+
+
+    <form [formGroup]="registerForm">
+      <div *ngIf="isLoading" class="form-content">
+        <mat-spinner class="loading-icon" [diameter]="130"></mat-spinner>
+      </div>
+      <div *ngIf="!isLoading" class="form-content">
+        <p class="aligned-to-center">
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="exampleEmail@gmail.com" formControlName="username" #usernameInput>
+            <mat-icon matSuffix style="color: #673ab7;">alternate_email</mat-icon>
+            <mat-error *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+              Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p class="aligned-to-center">
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="examplepassword123" formControlName="password" #passwordInput>
+            <mat-icon matSuffix style="color: #673ab7;">lock</mat-icon>
+            <mat-error *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+              Please enter a valid password. min. 5 symbols, max. 50 symbols
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p class="aligned-to-center">
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Firstname</mat-label>
+            <input matInput placeholder="Damian" formControlName="firstname" #firstnameInput>
+            <mat-icon matSuffix style="color: #673ab7;">edit</mat-icon>
+            <mat-error>
+              Firstname cannot be empty
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p class="aligned-to-center">
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Lastname</mat-label>
+            <input matInput placeholder="Purgal" formControlName="lastname" #lastnameInput>
+            <mat-icon matSuffix style="color: #673ab7;">edit</mat-icon>
+            <mat-error>
+              Lastname cannot be empty
+            </mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+
+      <div class="buttons">
+          <span class="link-text" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">&#60;&#60; Login</span>
+        <span class="spacer"></span>
+          <button mat-raised-button color="primary" class="button" (click)="registerUser()" [disabled]="registerForm.invalid">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
