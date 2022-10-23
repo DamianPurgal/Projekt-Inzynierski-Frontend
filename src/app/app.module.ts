@@ -16,9 +16,11 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthorizationService } from './services/authorization/authorization.service';
+import { UserinfoPageComponent } from './components/userinfo-page/userinfo-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotFoundPageComponent,
     NavbarComponent,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    UserinfoPageComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatProgressSpinnerModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS, useClass:AuthorizationService, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

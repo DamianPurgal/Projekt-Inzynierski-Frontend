@@ -21,7 +21,7 @@ export class JwtAuthService {
     .pipe(
       map(authData => {
           sessionStorage.setItem("username", username);
-          sessionStorage.setItem("token", "Bearer " + authData.accessToken);
+          sessionStorage.setItem("accessToken", "Bearer " + authData.accessToken);
           return authData;
       })
     );
