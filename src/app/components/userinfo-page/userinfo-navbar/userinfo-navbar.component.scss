@@ -1,0 +1,15 @@
+.options-container {
+  padding: 40px;
+}
+.option {
+  cursor: pointer;
+  color: lighgrey;
+  transition: 0.3s;
+}
+.option:hover {
+  color: #673ab7;
+}
+.option-text {
+  margin-left:10px;
+  font-weight: 500;
+}

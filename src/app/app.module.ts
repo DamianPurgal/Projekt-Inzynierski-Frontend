@@ -23,6 +23,10 @@ import { AuthorizationService } from './services/authorization/authorization.ser
 import { UserinfoPageComponent } from './components/userinfo-page/userinfo-page.component';
 import { MatListModule } from '@angular/material/list'
 import { MatDividerModule } from '@angular/material/divider';
+import { UserinfoNavbarComponent } from './components/userinfo-page/userinfo-navbar/userinfo-navbar.component';
+import { UserinfoEditComponent } from './components/userinfo-page/userinfo-edit/userinfo-edit.component';
+import { UserinfoDeleteComponent } from './components/userinfo-page/userinfo-delete/userinfo-delete.component';
+import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/userinfo-help.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { MatDividerModule } from '@angular/material/divider';
     NavbarComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    UserinfoPageComponent
+    UserinfoPageComponent,
+    UserinfoNavbarComponent,
+    UserinfoEditComponent,
+    UserinfoDeleteComponent,
+    UserinfoHelpComponent
   ],
   imports: [
     BrowserModule,
