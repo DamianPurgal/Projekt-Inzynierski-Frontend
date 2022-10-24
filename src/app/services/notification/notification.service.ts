@@ -21,7 +21,7 @@ export class NotificationService {
       'OK',
       {
         duration: 3000,
-        panelClass: [style],
+        panelClass: [style, 'notification-margin'],
         horizontalPosition: "right",
         verticalPosition: "top",
       }
