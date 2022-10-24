@@ -6,13 +6,14 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { UserinfoPageComponent } from './components/userinfo-page/userinfo-page.component';
+import { AuthGuard } from './guards/AuthGuard/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'info', component: InfoPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'userinfo', component: UserinfoPageComponent },
+  { path: 'userinfo', component: UserinfoPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundPageComponent }
 ];
 
@@ -21,3 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

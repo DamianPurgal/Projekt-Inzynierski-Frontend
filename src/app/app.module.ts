@@ -21,6 +21,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorizationService } from './services/authorization/authorization.service';
 import { UserinfoPageComponent } from './components/userinfo-page/userinfo-page.component';
+import { MatListModule } from '@angular/material/list'
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { UserinfoPageComponent } from './components/userinfo-page/userinfo-page.
     MatSnackBarModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [
     {
