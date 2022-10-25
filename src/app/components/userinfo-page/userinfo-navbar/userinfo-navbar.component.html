@@ -16,7 +16,7 @@
       <span class="option-text">Delete account</span>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item mat-icon-button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class="option">
+    <mat-list-item mat-icon-button (click)="logout()" class="option">
       <mat-icon class="logo-icon">exit_to_app</mat-icon>
       <span class="option-text">Logout</span>
     </mat-list-item>
