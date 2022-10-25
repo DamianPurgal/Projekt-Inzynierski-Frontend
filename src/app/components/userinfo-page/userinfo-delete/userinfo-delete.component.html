@@ -3,7 +3,19 @@
     <mat-icon class="main-panel-left-icon">account_circle</mat-icon>
       <app-userinfo-navbar></app-userinfo-navbar>
   </div>
-  <div class="main-panel-right">
-    delete
+  <div class="loading-container" *ngIf="isLoading">
+    <mat-spinner class="loading-icon" [diameter]="130"></mat-spinner>
+  </div>
+  <div class="main-panel-right" *ngIf="!isLoading">
+    <div class="main-panel-right-header">
+      <p class="header-text">Delete Your Account</p>
+    </div>
+    <div class="body-container">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla elementum massa, et vehicula sapien sollicitudin quis. Nunc blandit magna a tellus faucibus finibus. Maecenas quis turpis ut mauris lacinia molestie. Curabitur nisl orci, euismod eu feugiat dictum, auctor eget nunc. Maecenas fermentum lorem id massa pharetra, ac finibus tortor dapibus. In sed rhoncus leo, eget sodales sem. Ut porta id nisl a lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+      <div class="button-container">
+        <span class="spacer"></span>
+        <button mat-raised-button color="primary" class="button" (click)="deleteLoggedUserAccount()">Delete account</button>
+      </div>
+    </div>
   </div>
 </div>

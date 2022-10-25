@@ -27,6 +27,7 @@ import { UserinfoNavbarComponent } from './components/userinfo-page/userinfo-nav
 import { UserinfoEditComponent } from './components/userinfo-page/userinfo-edit/userinfo-edit.component';
 import { UserinfoDeleteComponent } from './components/userinfo-page/userinfo-delete/userinfo-delete.component';
 import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/userinfo-help.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [
     {

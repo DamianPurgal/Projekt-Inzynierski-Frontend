@@ -3,7 +3,10 @@
     <mat-icon class="main-panel-left-icon">account_circle</mat-icon>
       <app-userinfo-navbar></app-userinfo-navbar>
   </div>
-  <div class="main-panel-right">
+  <div class="loading-container" *ngIf="isLoading">
+    <mat-spinner class="loading-icon" [diameter]="130"></mat-spinner>
+  </div>
+  <div class="main-panel-right" *ngIf="!isLoading">
     <div class="edit-header">
       Edit user data
     </div>
