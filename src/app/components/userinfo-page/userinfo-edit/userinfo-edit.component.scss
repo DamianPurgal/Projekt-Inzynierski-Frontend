@@ -15,10 +15,11 @@
   width: 20%;
   border-right: 1px solid lightgrey;
   float:left;
+  min-width:300px;
 }
 .main-panel-right {
   height: 900px;
-  width: 65%;
+  width: 75%;
   float:left;
 }
 .main-panel-left-icon {
@@ -33,5 +34,37 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.form-input {
+  width:400px;
+}
+.form-container {
+  margin-left: auto;
+  margin-right: auto;
+  width:400px;
+}
+.buttons {
+  margin-left: auto;
+  margin-right: auto;
+  width:120px;
+}
+.button {
+  width:120px;
+  height: 40px;
+}
+.edit-header {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 120px;
+  width:300px;
+  border-bottom: 6px solid #884cef;
+}
+.input-label {
+  color: rgb(72, 72, 72);
+  margin-left:10px;
+  padding-bottom: 5px;
+}
 // #673ab7

@@ -4,6 +4,59 @@
       <app-userinfo-navbar></app-userinfo-navbar>
   </div>
   <div class="main-panel-right">
-    edit
+    <div class="edit-header">
+      Edit user data
+    </div>
+    <form [formGroup]="editUserForm">
+      <div class="form-container">
+        <p class="input-label">Old password</p>
+        <p>
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Old password</mat-label>
+            <input type="password" matInput placeholder="examplepassword123" formControlName="oldPassword" #oldPasswordInput>
+            <mat-icon matSuffix style="color: #673ab7;">lock</mat-icon>
+            <mat-error *ngIf="editUserForm.get('oldPassword')?.invalid && editUserForm.get('oldPassword')?.touched">
+              Please enter a valid password. min. 5 symbols, max. 50 symbols
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p class="input-label">New password</p>
+        <p>
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>New password</mat-label>
+            <input type="password" matInput placeholder="examplepassword123" formControlName="newPassword" #newPasswordInput>
+            <mat-icon matSuffix style="color: #673ab7;">lock</mat-icon>
+            <mat-error *ngIf="editUserForm.get('newPassword')?.invalid && editUserForm.get('newPassword')?.touched">
+              Please enter a valid password. min. 5 symbols, max. 50 symbols
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p class="input-label">Firstname</p>
+        <p>
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Firstname</mat-label>
+            <input matInput placeholder="Damian" formControlName="firstname" #firstnameInput>
+            <mat-icon matSuffix style="color: #673ab7;">edit</mat-icon>
+            <mat-error>
+              Firstname cannot be empty
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p class="input-label">Lastname</p>
+        <p>
+          <mat-form-field appearance="outline" class="form-input">
+            <mat-label>Lastname</mat-label>
+            <input matInput placeholder="Purgal" formControlName="lastname" #lastnameInput>
+            <mat-icon matSuffix style="color: #673ab7;">edit</mat-icon>
+            <mat-error>
+              Lastname cannot be empty
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <div class="buttons">
+          <button mat-raised-button color="primary" class="button" (click)="editLoggedUserData()" [disabled]="editUserForm.invalid">Save</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

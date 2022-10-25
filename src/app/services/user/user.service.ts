@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, Observable } from 'rxjs';
 import { JwtToken } from '../authentication/interfaces/jwt-token';
+import { EditUserData } from './interfaces/edit-user-data';
 import { UserData } from './interfaces/user-data';
 
 @Injectable({
@@ -14,7 +15,13 @@ export class UserService {
 
   private loggedUserInfoURL : string = 'http://localhost:8080/api/users';
 
+  private editUserDataURL : string = 'http://localhost:8080/api/users';
+
   getLoggedUserInfo() : Observable<UserData> {
     return this.http.get<UserData>(this.loggedUserInfoURL);
+  }
+
+  editLoggedUserData(userData : EditUserData) : Observable<JwtToken> {
+    return this.http.put<JwtToken>(this.editUserDataURL, userData);
   }
 }

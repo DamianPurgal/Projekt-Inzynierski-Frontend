@@ -17,9 +17,9 @@ export class UserinfoPageComponent implements OnInit {
   isLoading: boolean = false;
 
   userData: UserData = {
-    email: "data not loaded",
-    firstname: "data not loaded",
-    lastname: "data not loaded"
+    email: "",
+    firstname: "",
+    lastname: ""
   };
 
   ngOnInit(): void {
