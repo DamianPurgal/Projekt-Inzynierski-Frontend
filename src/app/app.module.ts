@@ -28,6 +28,11 @@ import { UserinfoEditComponent } from './components/userinfo-page/userinfo-edit/
 import { UserinfoDeleteComponent } from './components/userinfo-page/userinfo-delete/userinfo-delete.component';
 import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/userinfo-help.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BlackboardListPageComponent } from './components/blackboard-list-page/blackboard-list-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { BlackboardComponent } from './components/blackboard-list-page/components/blackboard/blackboard.component';
+import { AddBlackboardComponent } from './components/blackboard-list-page/components/add-blackboard/add-blackboard.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserinfoNavbarComponent,
     UserinfoEditComponent,
     UserinfoDeleteComponent,
-    UserinfoHelpComponent
+    UserinfoHelpComponent,
+    BlackboardListPageComponent,
+    BlackboardComponent,
+    AddBlackboardComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatListModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [
     {

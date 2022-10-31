@@ -1,0 +1,24 @@
+<div class="content">
+
+  <div class="header">
+    My blackboards
+  </div>
+
+  <mat-divider class="divider"></mat-divider>
+  <div class="add-blackboard-container" (click)="tryToAddBlackboard()">
+    <span class="add-text">Add new blackboard</span>
+    <mat-icon>control_point</mat-icon>
+  </div>
+
+  <div class="blackboards-container">
+    <div class="loading-container" *ngIf="isLoading" [@enterAnimation]>
+      <mat-spinner class="loading-icon" [diameter]="130"></mat-spinner>
+    </div>
+    <div *ngIf="!isLoading">
+      <span *ngFor="let blackboard of blackboards" [@enterAnimation]>
+        <app-blackboard [blackboard]="blackboard"></app-blackboard>
+      </span>
+    </div>
+  </div>
+
+</div>

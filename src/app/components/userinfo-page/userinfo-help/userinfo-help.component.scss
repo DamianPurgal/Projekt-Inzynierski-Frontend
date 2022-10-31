@@ -1,6 +1,6 @@
 .main-panel {
   width: 70%;
-  height: 900px;
+  height: 800px;
   min-width: 1050px;
   margin-left: auto;
   margin-right: auto;
@@ -12,16 +12,16 @@
   box-shadow: 0px 0px 17px -11px rgba(66, 68, 90, 1);
 }
 .main-panel-left {
-  height: 900px;
+  height: 100%;
   width: 25%;
   border-right: 1px solid lightgrey;
   float:left;
   min-width:300px;
 }
 .main-panel-right {
-  height: 900px;
-  width: 65%;
+  width: 68%;
   float:left;
+  padding:3%;
 }
 .main-panel-left-icon {
   display: block;

@@ -10,6 +10,7 @@ import { AuthGuard } from './guards/AuthGuard/auth.guard';
 import { UserinfoEditComponent } from './components/userinfo-page/userinfo-edit/userinfo-edit.component';
 import { UserinfoDeleteComponent } from './components/userinfo-page/userinfo-delete/userinfo-delete.component';
 import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/userinfo-help.component';
+import { BlackboardListPageComponent } from './components/blackboard-list-page/blackboard-list-page.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'user/edit', component: UserinfoEditComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: 'user/delete', component: UserinfoDeleteComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: 'user/help', component: UserinfoHelpComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
+  { path: 'blackboards', component: BlackboardListPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundPageComponent }
 ];
 

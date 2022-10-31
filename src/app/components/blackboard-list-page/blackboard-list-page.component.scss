@@ -1,0 +1,51 @@
+.content {
+  width:90%;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding:30px;
+  margin-top: 3%;
+}
+.header {
+  font-size:30px;
+  color: rgb(50, 50, 50);
+}
+.divider {
+  margin-top:20px;
+  width: 20%;
+}
+.blackboards-container {
+  width:100%;
+  height:400px;
+  margin-top:30px;
+}
+.blackboard {
+  width:300px;
+  height: 120px;
+  display: inline-block;
+  margin:10px;
+  padding-left: 3%;
+  -webkit-box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
+}
+.add-blackboard-container {
+  font-size: 16px;
+  margin: 20px;
+  color: rgb(97, 97, 97);
+  cursor: pointer;
+}
+.mat-icon {
+  vertical-align: middle;
+  margin-left:5px;
+}
+.add-text {
+  vertical-align: middle;
+}
+.loading-container {
+  width: 100px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
