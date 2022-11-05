@@ -13,7 +13,7 @@ export class AddBlackboardComponent implements OnInit {
   dialogData: BlackboardAddDialogResult = {
     name : "",
     description: "",
-    color : "",
+    color : "#C70039",
     canceled: false
   }
 

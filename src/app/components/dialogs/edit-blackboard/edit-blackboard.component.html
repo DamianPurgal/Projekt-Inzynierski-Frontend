@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Add blackboard</h1>
+<h1 mat-dialog-title>Edit blackboard</h1>
 <div mat-dialog-content>
-  <form [formGroup]="addBlackboardForm">
+  <form [formGroup]="editBlackboardForm">
     <p>Name</p>
     <mat-form-field appearance="fill" class="blackboard-input">
       <mat-label>Name</mat-label>
@@ -29,9 +29,8 @@
     </mat-form-field>
   </form>
 
-
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="closeDialog()">Cancel</button>
-  <button mat-button cdkFocusInitial [mat-dialog-close]="dialogData" [disabled]="addBlackboardForm.invalid">Add</button>
+  <button mat-button cdkFocusInitial [mat-dialog-close]="dialogData" [disabled]="editBlackboardForm.invalid">Edit</button>
 </div>

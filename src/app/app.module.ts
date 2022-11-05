@@ -34,6 +34,8 @@ import { BlackboardComponent } from './components/blackboard-list-page/component
 import { AddBlackboardComponent } from './components/blackboard-list-page/components/add-blackboard/add-blackboard.component';
 import { FormsModule } from '@angular/forms';
 import { AddBlackboardContributorComponent } from './components/dialogs/add-blackboard-contributor/add-blackboard-contributor.component';
+import { DeleteBlackboardComponent } from './components/dialogs/delete-blackboard/delete-blackboard.component';
+import { EditBlackboardComponent } from './components/dialogs/edit-blackboard/edit-blackboard.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { AddBlackboardContributorComponent } from './components/dialogs/add-blac
     BlackboardListPageComponent,
     BlackboardComponent,
     AddBlackboardComponent,
-    AddBlackboardContributorComponent
+    AddBlackboardContributorComponent,
+    DeleteBlackboardComponent,
+    EditBlackboardComponent
   ],
   imports: [
     BrowserModule,

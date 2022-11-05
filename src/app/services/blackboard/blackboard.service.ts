@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BlackboardAdd } from './interfaces/blackboard-add';
 import { BlackboardContributorAddDto } from './interfaces/blackboard-contributor-add-dto';
+import { BlackboardDeleteDto } from './interfaces/blackboard-delete-dto';
+import { BlackboardEditDto } from './interfaces/blackboard-edit-dto';
+import { BlackboardEditResult } from './interfaces/blackboard-edit-result';
 import { BlackboardInfo } from './interfaces/blackboard-info';
 
 @Injectable({
@@ -17,6 +20,8 @@ export class BlackboardService {
   private allBlackboardsURL : string = 'http://localhost:8080/api/blackboards/all';
   private addBlackboardURL : string = 'http://localhost:8080/api/blackboards';
   private addBlackboardContributorURL : string = 'http://localhost:8080/api/blackboards/';
+  private deleteBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
+  private editBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
 
   getAllBlackboardsOfUser() : Observable<BlackboardInfo[]> {
     return this.http.get<BlackboardInfo[]>(this.allBlackboardsURL);
@@ -33,6 +38,19 @@ export class BlackboardService {
     return this.http.post<void>(
         this.addBlackboardContributorURL + blackboardContributor.blackboardUUID,
         params
+      );
+  }
+
+  deleteBlackboard(blackboardDeleteDto: BlackboardDeleteDto) : Observable<void> {
+    return this.http.delete<void>(
+        this.deleteBlackboardURL + blackboardDeleteDto.blackboardUUID
+      );
+  }
+
+  editBlackboard(blackboardEditDto: BlackboardEditDto, blackboardUUID: String) : Observable<BlackboardEditResult> {
+    return this.http.put<BlackboardEditResult>(
+        this.editBlackboardURL + blackboardUUID,
+        blackboardEditDto
       );
   }
 }

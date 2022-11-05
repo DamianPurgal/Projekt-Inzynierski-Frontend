@@ -16,7 +16,7 @@
     </div>
     <div *ngIf="!isLoading">
       <span *ngFor="let blackboard of blackboards" [@enterAnimation]>
-        <app-blackboard [blackboard]="blackboard"></app-blackboard>
+        <app-blackboard [blackboard]="blackboard" (deleteBlackboardEvent)="deleteBlackboard($event)" (editBlackboardEvent)="editBlackboard($event)"></app-blackboard>
       </span>
     </div>
   </div>

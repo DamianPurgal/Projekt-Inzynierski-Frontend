@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { catchError, tap } from 'rxjs';
 import { BlackboardService } from 'src/app/services/blackboard/blackboard.service';
 import { BlackboardAdd } from 'src/app/services/blackboard/interfaces/blackboard-add';
+import { BlackboardEditResult } from 'src/app/services/blackboard/interfaces/blackboard-edit-result';
 import { BlackboardInfo } from 'src/app/services/blackboard/interfaces/blackboard-info';
 import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
@@ -110,6 +111,25 @@ export class BlackboardListPageComponent implements OnInit {
         );
     });
 
+  }
+
+  deleteBlackboard(blackboardUUID: String) {
+    this.blackboards.forEach( (blackboard, index) => {
+      if (blackboard.uuid === blackboardUUID) {
+        this.blackboards.splice(index,1)
+      }
+    });
+  }
+
+  editBlackboard(blackboardEditResult: BlackboardEditResult) {
+    this.blackboards.forEach( (blackboard, index) => {
+      if (blackboard.uuid === blackboardEditResult.uuid) {
+        blackboard.color = blackboardEditResult.color;
+        blackboard.description = blackboardEditResult.description;
+        blackboard.name = blackboardEditResult.name;
+        blackboard.role = blackboardEditResult.role;
+      }
+    });
   }
 
 }
