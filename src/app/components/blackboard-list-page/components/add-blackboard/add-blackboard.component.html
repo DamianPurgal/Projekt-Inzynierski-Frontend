@@ -4,7 +4,7 @@
     <p>Name</p>
     <mat-form-field appearance="fill" class="blackboard-input">
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="blackboardToAdd.name" formControlName="name">
+      <input matInput [(ngModel)]="dialogData.name" formControlName="name">
       <mat-error>
         Name cannot be empty
       </mat-error>
@@ -13,7 +13,7 @@
     <p>Description</p>
     <mat-form-field appearance="fill" class="blackboard-input">
       <mat-label>Description</mat-label>
-      <input matInput [(ngModel)]="blackboardToAdd.description" formControlName="description">
+      <input matInput [(ngModel)]="dialogData.description" formControlName="description">
       <mat-error>
         Description cannot be empty
       </mat-error>
@@ -22,7 +22,7 @@
     <p>Color</p>
     <mat-form-field appearance="outline" class="blackboard-input">
       <mat-label>Color</mat-label>
-      <input matInput type="color" [(ngModel)]="blackboardToAdd.color" formControlName="color">
+      <input matInput type="color" [(ngModel)]="dialogData.color" formControlName="color">
       <mat-error>
         Color cannot be empty
       </mat-error>
@@ -33,5 +33,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="closeDialog()">Cancel</button>
-  <button mat-button cdkFocusInitial [mat-dialog-close]="blackboardToAdd" [disabled]="addBlackboardForm.invalid">Add</button>
+  <button mat-button cdkFocusInitial [mat-dialog-close]="dialogData" [disabled]="addBlackboardForm.invalid">Add</button>
 </div>

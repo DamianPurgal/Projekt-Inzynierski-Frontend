@@ -70,7 +70,16 @@ export class BlackboardListPageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.addBlackboard(result);
+      const blackboardToAdd: BlackboardAdd = {
+        color: result.color,
+        description: result.description,
+        name: result.name
+      }
+      if (result.canceled) {
+        return;
+      }
+
+      this.addBlackboard(blackboardToAdd);
     });
   }
 
@@ -102,4 +111,5 @@ export class BlackboardListPageComponent implements OnInit {
     });
 
   }
+
 }

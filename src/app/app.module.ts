@@ -33,6 +33,7 @@ import { MatCardModule } from '@angular/material/card';
 import { BlackboardComponent } from './components/blackboard-list-page/components/blackboard/blackboard.component';
 import { AddBlackboardComponent } from './components/blackboard-list-page/components/add-blackboard/add-blackboard.component';
 import { FormsModule } from '@angular/forms';
+import { AddBlackboardContributorComponent } from './components/dialogs/add-blackboard-contributor/add-blackboard-contributor.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FormsModule } from '@angular/forms';
     UserinfoHelpComponent,
     BlackboardListPageComponent,
     BlackboardComponent,
-    AddBlackboardComponent
+    AddBlackboardComponent,
+    AddBlackboardContributorComponent
   ],
   imports: [
     BrowserModule,

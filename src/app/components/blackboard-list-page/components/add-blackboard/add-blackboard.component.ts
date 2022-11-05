@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BlackboardAdd } from 'src/app/services/blackboard/interfaces/blackboard-add';
+import { BlackboardAddDialogResult } from './interfaces/blackboard-add-dialog-result';
 
 @Component({
   selector: 'app-add-blackboard',
@@ -10,10 +10,11 @@ import { BlackboardAdd } from 'src/app/services/blackboard/interfaces/blackboard
 })
 export class AddBlackboardComponent implements OnInit {
 
-  blackboardToAdd: BlackboardAdd = {
+  dialogData: BlackboardAddDialogResult = {
     name : "",
     description: "",
-    color : ""
+    color : "",
+    canceled: false
   }
 
   addBlackboardForm!: FormGroup;
@@ -26,6 +27,7 @@ export class AddBlackboardComponent implements OnInit {
       'description' : new FormControl(null),
       'color' : new FormControl(null, [Validators.required]),
     });
+    reference.disableClose = true;
   }
 
 
@@ -34,6 +36,7 @@ export class AddBlackboardComponent implements OnInit {
   }
 
   closeDialog() {
+    this.dialogData.canceled = true;
     this.reference.close();
   }
 }
