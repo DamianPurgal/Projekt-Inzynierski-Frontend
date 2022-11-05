@@ -36,6 +36,7 @@ import { FormsModule } from '@angular/forms';
 import { AddBlackboardContributorComponent } from './components/dialogs/add-blackboard-contributor/add-blackboard-contributor.component';
 import { DeleteBlackboardComponent } from './components/dialogs/delete-blackboard/delete-blackboard.component';
 import { EditBlackboardComponent } from './components/dialogs/edit-blackboard/edit-blackboard.component';
+import { BlackboardSortPipe } from './pipes/blackboard/blackboard-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { EditBlackboardComponent } from './components/dialogs/edit-blackboard/ed
     AddBlackboardComponent,
     AddBlackboardContributorComponent,
     DeleteBlackboardComponent,
-    EditBlackboardComponent
+    EditBlackboardComponent,
+    BlackboardSortPipe
   ],
   imports: [
     BrowserModule,
