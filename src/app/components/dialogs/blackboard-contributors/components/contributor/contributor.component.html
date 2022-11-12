@@ -1,0 +1,13 @@
+<div class="contributor-container">
+  <div class="contributor-email">
+    {{contributor.email}}
+  </div>
+  <div class="contributor-role">
+    <p class="contributor-role-text">
+      {{contributor.role}}
+    </p>
+  </div>
+  <div class="contributor-delete">
+    <button mat-stroked-button color="warn" class="button-delete" color="warn" (click)="deleteContributor()" *ngIf="!isOwner()" >remove</button>
+  </div>
+</div>

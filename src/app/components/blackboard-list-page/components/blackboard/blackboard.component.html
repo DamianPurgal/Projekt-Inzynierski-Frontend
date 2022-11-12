@@ -1,10 +1,10 @@
 <mat-card class="blackboard" style="background: linear-gradient(to right, {{blackboard.color}} 0%, {{blackboard.color}} 10%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 100%);">
   <mat-card-title>{{blackboard.name}}</mat-card-title>
-  <mat-card-content>
+  <mat-card-content class="blackboard-description">
     <p>{{blackboard.description}}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="tryToAddBlackboardContributor()" *ngIf="isBlackboardOwner()">ADD USER</button>
+    <button mat-button (click)="openContributorsDialog()" *ngIf="isBlackboardOwner()">CONTRIBUTORS</button>
     <button mat-button (click)="tryToEditBlackboard()" *ngIf="isBlackboardOwner()">EDIT</button>
     <button mat-button (click)="tryToDeleteBlackboard()" *ngIf="isBlackboardOwner()">DELETE</button>
   </mat-card-actions>

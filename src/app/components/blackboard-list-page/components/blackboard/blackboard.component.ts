@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { tap, catchError } from 'rxjs';
 import { AddBlackboardContributorComponent } from 'src/app/components/dialogs/add-blackboard-contributor/add-blackboard-contributor.component';
+import { BlackboardContributorsComponent } from 'src/app/components/dialogs/blackboard-contributors/blackboard-contributors.component';
 import { DeleteBlackboardComponent } from 'src/app/components/dialogs/delete-blackboard/delete-blackboard.component';
 import { EditBlackboardComponent } from 'src/app/components/dialogs/edit-blackboard/edit-blackboard.component';
 import { BlackboardService } from 'src/app/services/blackboard/blackboard.service';
@@ -33,50 +34,6 @@ export class BlackboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  tryToAddBlackboardContributor() {
-    this.openBlackboardContributorDialog();
-  }
-
-  private openBlackboardContributorDialog() {
-    const dialogRef = this.dialog.open(AddBlackboardContributorComponent, {
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      const blackboardContributorToAdd: BlackboardContributorAddDto = {
-        blackboardUUID: this.blackboard.uuid,
-        contributor: result.contributorEmail
-      }
-      if (result.canceled) {
-        return;
-      }
-
-      this.blackboardService.addBlackboardContributor(blackboardContributorToAdd)
-      .pipe(
-        tap(() => (this.isLoading = false)),
-        catchError((error) => {
-          this.isLoading = false;
-          this.notificationService.displayNotification(
-            {
-              message: error.error.message,
-            },
-            NotificationType.WARNING
-          );
-          throw new Error("Error while add new blackboard contributor");
-        })
-      ).subscribe(Response =>
-        {
-          this.notificationService.displayNotification(
-            {
-              message: "Contributor successfully added",
-            },
-            NotificationType.INFO
-          );
-      });
-    });
-  }
-
 
   tryToDeleteBlackboard() {
     this.openBlackboardDeleteDialog();
@@ -136,7 +93,7 @@ export class BlackboardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       const blackboardEditDto: BlackboardEditDto = {
         name: result.name,
-        description: result.name,
+        description: result.description,
         color: result.color
       }
 
@@ -176,5 +133,12 @@ export class BlackboardComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  openContributorsDialog() {
+    const dialogRef = this.dialog.open(BlackboardContributorsComponent, {
+      width: '700px',
+      data: this.blackboard.uuid
+    });
   }
 }

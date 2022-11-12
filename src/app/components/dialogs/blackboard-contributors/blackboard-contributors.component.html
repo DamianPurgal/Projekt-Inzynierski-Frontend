@@ -1,0 +1,43 @@
+<h1 mat-dialog-title class="title">Blackboard contributors</h1>
+
+
+<div *ngIf="!isLoading">
+  <mat-divider class="divider"></mat-divider>
+
+  <span *ngFor="let contributor of contributors | contributorSort">
+    <app-contributor [contributor]="contributor" (deleteContributorEvent)="deleteContributor($event)"></app-contributor>
+    <mat-divider class="divider"></mat-divider>
+  </span>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel class="add-contributor-expandable-panel">
+
+    <mat-expansion-panel-header>
+
+      <mat-panel-title>
+        Add new contributor
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <div class="add-contributor-container">
+      <form [formGroup]="addBlackboardContributorForm">
+        <p class="contributor-text">Contributor email</p>
+        <mat-form-field appearance="fill" class="contributor-input">
+          <mat-label>Contributor email</mat-label>
+          <input matInput [(ngModel)]="contributorToAddEmail" formControlName="contributorEmail">
+          <mat-error>
+            Email must be in the proper format
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <div mat-dialog-actions>
+        <button mat-raised-button cdkFocusInitial (click)="addBlackboardContributor()" [disabled]="addBlackboardContributorForm.invalid" class="contributor-button">Add</button>
+      </div>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<button mat-raised-button (click)="closeDialog()" class="exit-button">Exit</button>

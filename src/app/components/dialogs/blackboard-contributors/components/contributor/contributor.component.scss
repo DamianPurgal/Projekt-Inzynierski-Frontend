@@ -1,0 +1,35 @@
+.contributor-container {
+  width: 520px;
+  font-size: 17px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contributor-email {
+  width:280px;
+  display: inline-block;
+  font-weight: 500;
+}
+.contributor-role {
+  width: 120px;
+  display: inline-block;
+  text-align: center;
+}
+.contributor-delete {
+  width: 120px;
+  display: inline-block;
+}
+.button-delete {
+  width:100px;
+  display: block;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.contributor-role-text {
+  border: 1px solid #673ab7;
+  font-size: 11px;
+  border-radius: 10px;
+  color: #673ab7;
+  letter-spacing: 2px;
+}

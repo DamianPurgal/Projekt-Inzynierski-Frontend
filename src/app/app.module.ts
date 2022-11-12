@@ -37,6 +37,10 @@ import { AddBlackboardContributorComponent } from './components/dialogs/add-blac
 import { DeleteBlackboardComponent } from './components/dialogs/delete-blackboard/delete-blackboard.component';
 import { EditBlackboardComponent } from './components/dialogs/edit-blackboard/edit-blackboard.component';
 import { BlackboardSortPipe } from './pipes/blackboard/blackboard-sort.pipe';
+import { BlackboardContributorsComponent } from './components/dialogs/blackboard-contributors/blackboard-contributors.component';
+import { ContributorComponent } from './components/dialogs/blackboard-contributors/components/contributor/contributor.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ContributorSortPipe } from './pipes/contributor/contributor-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,10 @@ import { BlackboardSortPipe } from './pipes/blackboard/blackboard-sort.pipe';
     AddBlackboardContributorComponent,
     DeleteBlackboardComponent,
     EditBlackboardComponent,
-    BlackboardSortPipe
+    BlackboardSortPipe,
+    BlackboardContributorsComponent,
+    ContributorComponent,
+    ContributorSortPipe
   ],
   imports: [
     BrowserModule,
@@ -77,7 +84,8 @@ import { BlackboardSortPipe } from './pipes/blackboard/blackboard-sort.pipe';
     MatDividerModule,
     MatDialogModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
   ],
   providers: [
     {

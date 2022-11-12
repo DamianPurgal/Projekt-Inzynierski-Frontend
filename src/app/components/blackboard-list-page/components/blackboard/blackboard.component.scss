@@ -1,10 +1,14 @@
 .blackboard {
   width:300px;
-  height: 120px;
+  height: 180px;
   display: inline-block;
   margin:10px;
   padding-left: 3%;
   -webkit-box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
   box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
+}
+.blackboard-description {
+  height: 80px;
+  overflow: hidden;
 }

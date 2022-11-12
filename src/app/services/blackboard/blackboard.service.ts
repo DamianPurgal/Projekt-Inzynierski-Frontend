@@ -19,7 +19,7 @@ export class BlackboardService {
 
   private allBlackboardsURL : string = 'http://localhost:8080/api/blackboards/all';
   private addBlackboardURL : string = 'http://localhost:8080/api/blackboards';
-  private addBlackboardContributorURL : string = 'http://localhost:8080/api/blackboards/';
+  private addBlackboardContributorURL : string = 'http://localhost:8080/api/contributors/blackboards/';
   private deleteBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
   private editBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
 
