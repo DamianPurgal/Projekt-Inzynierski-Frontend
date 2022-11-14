@@ -9,6 +9,10 @@
   box-shadow: 0px 0px 14px -7px rgba(66, 68, 90, 1);
 }
 .blackboard-description {
+  background-color: attr(blackboard-color);
   height: 80px;
   overflow: hidden;
+}
+.clickable {
+  cursor: pointer;
 }

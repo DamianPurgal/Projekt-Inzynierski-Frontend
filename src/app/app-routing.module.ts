@@ -11,6 +11,7 @@ import { UserinfoEditComponent } from './components/userinfo-page/userinfo-edit/
 import { UserinfoDeleteComponent } from './components/userinfo-page/userinfo-delete/userinfo-delete.component';
 import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/userinfo-help.component';
 import { BlackboardListPageComponent } from './components/blackboard-list-page/blackboard-list-page.component';
+import { BlackboardPageComponent } from './components/blackboard-page/blackboard-page.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'user/delete', component: UserinfoDeleteComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: 'user/help', component: UserinfoHelpComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: 'blackboards', component: BlackboardListPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
+  { path: 'blackboard/:uuid', component: BlackboardPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundPageComponent }
 ];
 

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { BlackboardAdd } from './interfaces/blackboard-add';
 import { BlackboardContributorAddDto } from './interfaces/blackboard-contributor-add-dto';
 import { BlackboardDeleteDto } from './interfaces/blackboard-delete-dto';
+import { BlackboardDetailedDto } from './interfaces/blackboard-detailed-dto';
 import { BlackboardEditDto } from './interfaces/blackboard-edit-dto';
 import { BlackboardEditResult } from './interfaces/blackboard-edit-result';
 import { BlackboardInfo } from './interfaces/blackboard-info';
@@ -18,10 +19,17 @@ export class BlackboardService {
   ) { }
 
   private allBlackboardsURL : string = 'http://localhost:8080/api/blackboards/all';
+  private detailedBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
   private addBlackboardURL : string = 'http://localhost:8080/api/blackboards';
   private addBlackboardContributorURL : string = 'http://localhost:8080/api/contributors/blackboards/';
   private deleteBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
   private editBlackboardURL : string = 'http://localhost:8080/api/blackboards/';
+
+  getBlackboardDetailed(blackboardUuid : string) : Observable<BlackboardDetailedDto> {
+    return this.http.get<BlackboardDetailedDto>(
+        this.detailedBlackboardURL + blackboardUuid + "/detailed"
+      );
+  }
 
   getAllBlackboardsOfUser() : Observable<BlackboardInfo[]> {
     return this.http.get<BlackboardInfo[]>(this.allBlackboardsURL);

@@ -41,6 +41,8 @@ import { BlackboardContributorsComponent } from './components/dialogs/blackboard
 import { ContributorComponent } from './components/dialogs/blackboard-contributors/components/contributor/contributor.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ContributorSortPipe } from './pipes/contributor/contributor-sort.pipe';
+import { BlackboardPageComponent } from './components/blackboard-page/blackboard-page.component';
+import { BlackboardNavbarComponent } from './components/blackboard-page/components/blackboard-navbar/blackboard-navbar.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { ContributorSortPipe } from './pipes/contributor/contributor-sort.pipe';
     BlackboardSortPipe,
     BlackboardContributorsComponent,
     ContributorComponent,
-    ContributorSortPipe
+    ContributorSortPipe,
+    BlackboardPageComponent,
+    BlackboardNavbarComponent
   ],
   imports: [
     BrowserModule,

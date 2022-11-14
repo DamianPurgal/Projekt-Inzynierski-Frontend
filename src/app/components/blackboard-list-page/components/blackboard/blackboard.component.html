@@ -1,6 +1,6 @@
 <mat-card class="blackboard" style="background: linear-gradient(to right, {{blackboard.color}} 0%, {{blackboard.color}} 10%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 100%);">
-  <mat-card-title>{{blackboard.name}}</mat-card-title>
-  <mat-card-content class="blackboard-description">
+  <mat-card-title class="clickable" [routerLink]="['/blackboard', blackboard.uuid]" routerLinkActive="active" ariaCurrentWhenActive="page">{{blackboard.name}}</mat-card-title>
+  <mat-card-content class="blackboard-description clickable" [routerLink]="['/blackboard', blackboard.uuid]" routerLinkActive="active" ariaCurrentWhenActive="page">
     <p>{{blackboard.description}}</p>
   </mat-card-content>
   <mat-card-actions>
