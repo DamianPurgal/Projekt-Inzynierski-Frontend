@@ -1,0 +1,49 @@
+.column-container {
+  width: 320px;
+  height: 600px;
+  background-color: rgb(246, 246, 246);
+  margin: 0 16px;
+  border-radius: 8px;
+  float: left;
+  -webkit-box-shadow: 0px 0px 23px -18px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 23px -18px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 23px -18px rgba(66, 68, 90, 1);
+}
+.column-title {
+  width: 300px;
+  height: 35px;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px 8px 0 0;
+}
+.column-body {
+  width: 294px;
+  height: 510px;
+  margin: 13px;
+  background-color: white;
+  border: 1px solid rgb(233, 233, 233);
+}
+.column-title-color {
+  height: 12px;
+  width: 80px;
+  margin-top: 9px;
+  margin-left: 12px;
+  border-radius: 7px;
+  display: block;
+  float: left;
+  -webkit-box-shadow: inset 38px -3px 35px -64px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 38px -3px 35px -64px rgba(66, 68, 90, 1);
+  box-shadow: inset 38px -3px 35px -64px rgba(66, 68, 90, 1);
+}
+.column-title-text {
+  height: 30px;
+  width: 180px;
+  display: block;
+  float: left;
+  line-height: 30px;
+  font-size: 16px;
+  padding-left: 16px;
+  overflow: hidden;
+  color: rgb(48, 48, 48);
+}

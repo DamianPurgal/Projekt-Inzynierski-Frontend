@@ -3,16 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap, catchError } from 'rxjs';
 import { BlackboardService } from 'src/app/services/blackboard/blackboard.service';
-import { BlackboardDeleteDto } from 'src/app/services/blackboard/interfaces/blackboard-delete-dto';
 import { BlackboardDetailedDto } from 'src/app/services/blackboard/interfaces/blackboard-detailed-dto';
-import { BlackboardEditDto } from 'src/app/services/blackboard/interfaces/blackboard-edit-dto';
 import { BlackboardInfo } from 'src/app/services/blackboard/interfaces/blackboard-info';
 import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
-import { BlackboardContributorsComponent } from '../dialogs/blackboard-contributors/blackboard-contributors.component';
-import { DeleteBlackboardComponent } from '../dialogs/delete-blackboard/delete-blackboard.component';
-import { EditBlackboardComponent } from '../dialogs/edit-blackboard/edit-blackboard.component';
-
 @Component({
   selector: 'app-blackboard-page',
   templateUrl: './blackboard-page.component.html',

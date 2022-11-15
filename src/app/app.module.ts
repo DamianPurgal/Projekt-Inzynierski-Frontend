@@ -43,6 +43,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ContributorSortPipe } from './pipes/contributor/contributor-sort.pipe';
 import { BlackboardPageComponent } from './components/blackboard-page/blackboard-page.component';
 import { BlackboardNavbarComponent } from './components/blackboard-page/components/blackboard-navbar/blackboard-navbar.component';
+import { BlackboardColumnComponent } from './components/blackboard-page/components/blackboard-column/blackboard-column.component';
+import { ColumnSortPipe } from './pipes/column/column-sort.pipe';
+import { BlackboardTicketComponent } from './components/blackboard-page/components/blackboard-ticket/blackboard-ticket.component';
+import { TicketSortPipe } from './pipes/ticket/ticket-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import { BlackboardNavbarComponent } from './components/blackboard-page/componen
     ContributorComponent,
     ContributorSortPipe,
     BlackboardPageComponent,
-    BlackboardNavbarComponent
+    BlackboardNavbarComponent,
+    BlackboardColumnComponent,
+    ColumnSortPipe,
+    BlackboardTicketComponent,
+    TicketSortPipe
   ],
   imports: [
     BrowserModule,

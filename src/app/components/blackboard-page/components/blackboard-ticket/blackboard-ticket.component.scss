@@ -1,0 +1,39 @@
+.ticket-container {
+  width: 280px;
+  height: 120px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(246, 246, 246);
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 4px;
+}
+.ticket-title {
+  width: 260px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+.ticket-options {
+  width: 130px;
+  height: 32px;
+  padding: 4px 5px;
+  border-radius: 0 0 4px 4px;
+  float: left;
+}
+.ticket-color {
+  width: 112px;
+  margin: 11px 14px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: blue;
+  float: left;
+  -webkit-box-shadow: inset 38px -3px 35px -64px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 38px -3px 35px -64px rgba(66, 68, 90, 1);
+  box-shadow: inset 38px -3px 35px -64px rgba(66, 68, 90, 1);
+}
+.option {
+  margin: 0 4px;
+  font-size: 20px;
+  cursor: pointer;
+}

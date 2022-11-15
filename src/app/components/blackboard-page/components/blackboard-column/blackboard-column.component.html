@@ -1,0 +1,13 @@
+<div class="column-container">
+  <div class="column-title">
+    <div class="column-title-text">
+      {{column.name}}
+    </div>
+    <div class="column-title-color" [ngStyle]="{'background-color': column.color}"></div>
+  </div>
+  <div class="column-body">
+    <span *ngFor="let ticket of column.tickets | ticketSort">
+      <app-blackboard-ticket [ticket]="ticket"></app-blackboard-ticket>
+    </span>
+  </div>
+</div>
