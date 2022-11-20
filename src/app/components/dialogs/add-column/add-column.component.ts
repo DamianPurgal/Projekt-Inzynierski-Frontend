@@ -1,30 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { TicketAddDialogResult } from './interfaces/ticket-add-dialog-result';
+import { ColumnAddDialogResult } from './interfaces/column-add-dialog-result';
 
 @Component({
-  selector: 'app-add-ticket',
-  templateUrl: './add-ticket.component.html',
-  styleUrls: ['./add-ticket.component.scss']
+  selector: 'app-add-column',
+  templateUrl: './add-column.component.html',
+  styleUrls: ['./add-column.component.scss']
 })
-export class AddTicketComponent implements OnInit {
+export class AddColumnComponent implements OnInit {
 
-  dialogData: TicketAddDialogResult = {
+  dialogData: ColumnAddDialogResult = {
     name : "",
-    description: "",
     color : "#C70039",
     canceled: false
   }
 
-  addTicketForm!: FormGroup;
+  addColumnForm!: FormGroup;
 
   constructor(
-    public reference: MatDialogRef<AddTicketComponent>
+    public reference: MatDialogRef<AddColumnComponent>
   ) {
-    this.addTicketForm = new FormGroup({
+    this.addColumnForm = new FormGroup({
       'name' : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
-      'description' : new FormControl(null),
       'color' : new FormControl(null, [Validators.required]),
     });
     reference.disableClose = true;

@@ -51,6 +51,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddTicketComponent } from './components/dialogs/add-ticket/add-ticket.component';
 import { EditTicketComponent } from './components/dialogs/edit-ticket/edit-ticket.component';
 import { DeleteTicketComponent } from './components/dialogs/delete-ticket/delete-ticket.component';
+import { AddColumnComponent } from './components/dialogs/add-column/add-column.component';
+import { EditColumnComponent } from './components/dialogs/edit-column/edit-column.component';
+import { DeleteColumnComponent } from './components/dialogs/delete-column/delete-column.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +87,10 @@ import { DeleteTicketComponent } from './components/dialogs/delete-ticket/delete
     TicketSortPipe,
     AddTicketComponent,
     EditTicketComponent,
-    DeleteTicketComponent
+    DeleteTicketComponent,
+    AddColumnComponent,
+    EditColumnComponent,
+    DeleteColumnComponent
   ],
   imports: [
     BrowserModule,

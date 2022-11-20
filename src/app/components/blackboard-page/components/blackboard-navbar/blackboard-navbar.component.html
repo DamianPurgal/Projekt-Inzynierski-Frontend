@@ -2,9 +2,10 @@
   <div class="title-container">
     {{blackboard.name}}
   </div>
-  <div class="buttons-container" *ngIf="isBlackboardOwner()">
-    <button mat-raised-button class="navbar-button" (click)="openContributorsDialog()">CONTRIBUTORS</button>
-    <button mat-raised-button class="navbar-button" (click)="tryToEditBlackboard()">EDIT</button>
-    <button mat-raised-button class="navbar-button" (click)="tryToDeleteBlackboard()" color="warn">DELETE</button>
+  <div class="buttons-container">
+    <button mat-raised-button class="navbar-button" (click)="openColumnAddDialog()">ADD COLUMN</button>
+    <button mat-raised-button class="navbar-button" (click)="openContributorsDialog()" *ngIf="isBlackboardOwner()">CONTRIBUTORS</button>
+    <button mat-raised-button class="navbar-button" (click)="tryToEditBlackboard()" *ngIf="isBlackboardOwner()">EDIT</button>
+    <button mat-raised-button class="navbar-button" (click)="tryToDeleteBlackboard()" color="warn" *ngIf="isBlackboardOwner()">DELETE</button>
   </div>
 </div>

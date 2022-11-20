@@ -5,6 +5,7 @@ import { tap, catchError } from 'rxjs';
 import { BlackboardService } from 'src/app/services/blackboard/blackboard.service';
 import { BlackboardDetailedDto } from 'src/app/services/blackboard/interfaces/blackboard-detailed-dto';
 import { BlackboardInfo } from 'src/app/services/blackboard/interfaces/blackboard-info';
+import { ColumnDto } from 'src/app/services/column/interfaces/column-dto';
 import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 @Component({
@@ -65,5 +66,15 @@ export class BlackboardPageComponent implements OnInit {
       });
   }
 
+  addColumn(column: ColumnDto) {
+    this.blackboardDetailed.columns.push(column);
+  }
 
+  deleteColumn(columnUUID: string) {
+    this.blackboardDetailed.columns.forEach( (column, index) => {
+      if (column.uuid === columnUUID) {
+        this.blackboardDetailed.columns.splice(index,1)
+      }
+    });
+  }
 }

@@ -54,7 +54,27 @@
   cursor: pointer;
   color: rgb(48, 48, 48);
   transition: 0.2s;
+  float:left;
+  padding-top: 4px;
 }
 .ticket-add-container:hover {
   color: black;
+}
+.column-options {
+  width: 60px;
+  height: 32px;
+  padding: 4px 5px;
+  border-radius: 0 0 4px 4px;
+  float: left;
+}
+.divider {
+  width: 80px;
+  height: 10px;
+  float: left;
+}
+.option {
+  margin: 0 2px;
+  font-size: 16px;
+  color: rgb(48, 48, 48);
+  cursor: pointer;
 }

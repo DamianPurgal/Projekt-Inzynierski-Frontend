@@ -12,5 +12,12 @@
     <app-blackboard-ticket  *ngFor="let ticket of column.tickets | ticketSort"
     [ticket]="ticket" [blackboardUUID]="blackboardUUID" [columnUUID]="column.uuid" (deleteTicketEvent)="deleteTicket($event)"></app-blackboard-ticket>
   </div>
-  <div (click)="openTicketAddDialog()" class="ticket-add-container">+ ADD NEW TICKET</div>
+  <div>
+    <div (click)="openTicketAddDialog()" class="ticket-add-container">+ ADD NEW TICKET</div>
+    <div class="divider"></div>
+    <div class="column-options">
+      <mat-icon class="option" (click)="openColumnEditDialog()">border_color</mat-icon>
+      <mat-icon class="option" (click)="openColumnDeleteDialog()">delete_outline</mat-icon>
+    </div>
+  </div>
 </div>
