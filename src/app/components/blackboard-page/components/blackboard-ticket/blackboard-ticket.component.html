@@ -1,12 +1,12 @@
-<div class="ticket-container">
+<div class="ticket-container" cdkDrag>
   <div class="ticket-title">
-    adkjoiasd aosihdaoishd asidahaiosdh aoidh aioshdaio
+    {{ticket.name}}
   </div>
   <div class="ticket-color" [ngStyle]="{'background-color': ticket.color}"></div>
   <div class="ticket-options">
     <mat-icon class="option">remove_red_eye</mat-icon>
-    <mat-icon class="option"> border_color</mat-icon>
+    <mat-icon class="option" (click) = "openTicketEditDialog()"> border_color</mat-icon>
     <mat-icon class="option"> chat</mat-icon>
-    <mat-icon class="option">delete_outline</mat-icon>
+    <mat-icon class="option" (click)="openTicketDeleteDialog()">delete_outline</mat-icon>
   </div>
 </div>

@@ -1,8 +1,8 @@
 .column-container {
   width: 320px;
-  height: 600px;
+  height: 630px;
   background-color: rgb(246, 246, 246);
-  margin: 0 16px;
+  margin: 0 32px;
   border-radius: 8px;
   float: left;
   -webkit-box-shadow: 0px 0px 23px -18px rgba(66, 68, 90, 1);
@@ -21,8 +21,8 @@
   width: 294px;
   height: 510px;
   margin: 13px;
-  background-color: white;
   border: 1px solid rgb(233, 233, 233);
+  overflow: scroll;
 }
 .column-title-color {
   height: 12px;
@@ -46,4 +46,15 @@
   padding-left: 16px;
   overflow: hidden;
   color: rgb(48, 48, 48);
+}
+.ticket-add-container {
+  margin-left: 20px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: pointer;
+  color: rgb(48, 48, 48);
+  transition: 0.2s;
+}
+.ticket-add-container:hover {
+  color: black;
 }

@@ -5,9 +5,12 @@
     </div>
     <div class="column-title-color" [ngStyle]="{'background-color': column.color}"></div>
   </div>
-  <div class="column-body">
-    <span *ngFor="let ticket of column.tickets | ticketSort">
-      <app-blackboard-ticket [ticket]="ticket"></app-blackboard-ticket>
-    </span>
+  <div class="column-body"
+  cdkDropList
+  [cdkDropListData]="column.tickets"
+  (cdkDropListDropped)="drop($event)">
+    <app-blackboard-ticket  *ngFor="let ticket of column.tickets | ticketSort"
+    [ticket]="ticket" [blackboardUUID]="blackboardUUID" [columnUUID]="column.uuid" (deleteTicketEvent)="deleteTicket($event)"></app-blackboard-ticket>
   </div>
+  <div (click)="openTicketAddDialog()" class="ticket-add-container">+ ADD NEW TICKET</div>
 </div>

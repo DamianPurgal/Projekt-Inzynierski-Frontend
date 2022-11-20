@@ -47,6 +47,10 @@ import { BlackboardColumnComponent } from './components/blackboard-page/componen
 import { ColumnSortPipe } from './pipes/column/column-sort.pipe';
 import { BlackboardTicketComponent } from './components/blackboard-page/components/blackboard-ticket/blackboard-ticket.component';
 import { TicketSortPipe } from './pipes/ticket/ticket-sort.pipe';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddTicketComponent } from './components/dialogs/add-ticket/add-ticket.component';
+import { EditTicketComponent } from './components/dialogs/edit-ticket/edit-ticket.component';
+import { DeleteTicketComponent } from './components/dialogs/delete-ticket/delete-ticket.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,10 @@ import { TicketSortPipe } from './pipes/ticket/ticket-sort.pipe';
     BlackboardColumnComponent,
     ColumnSortPipe,
     BlackboardTicketComponent,
-    TicketSortPipe
+    TicketSortPipe,
+    AddTicketComponent,
+    EditTicketComponent,
+    DeleteTicketComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +104,8 @@ import { TicketSortPipe } from './pipes/ticket/ticket-sort.pipe';
     MatDialogModule,
     MatCardModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    DragDropModule
   ],
   providers: [
     {

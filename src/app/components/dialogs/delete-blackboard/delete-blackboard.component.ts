@@ -22,7 +22,7 @@ export class DeleteBlackboardComponent implements OnInit {
 
   closeDialog() {
     this.dialogData.deleteBlackboard = false;
-    this.reference.close();
+    this.reference.close(this.dialogData);
   }
 
 }

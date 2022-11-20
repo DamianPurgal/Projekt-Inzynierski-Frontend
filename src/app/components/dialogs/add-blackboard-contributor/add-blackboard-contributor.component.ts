@@ -31,6 +31,6 @@ export class AddBlackboardContributorComponent implements OnInit {
 
   closeDialog() {
     this.dialogData.canceled = true;
-    this.reference.close();
+    this.reference.close(this.dialogData);
   }
 }

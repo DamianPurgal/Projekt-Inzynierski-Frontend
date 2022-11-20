@@ -138,4 +138,11 @@ export class BlackboardNavbarComponent implements OnInit {
       data: this.blackboard.uuid
     });
   }
+
+  isBlackboardOwner() {
+    if (this.blackboard.role == "OWNER") {
+      return true;
+    }
+    return false;
+  }
 }

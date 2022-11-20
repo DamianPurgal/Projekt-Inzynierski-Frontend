@@ -1,8 +1,8 @@
 <app-blackboard-navbar [blackboard]="blackboard"></app-blackboard-navbar>
 <div class="main-container">
-  <ng-container *ngIf="blackboardDetailed">
+  <ng-container *ngIf="blackboardDetailed" cdkDropListGroup>
     <span *ngFor="let column of blackboardDetailed.columns | columnSort">
-      <app-blackboard-column [column]="column"></app-blackboard-column>
+      <app-blackboard-column [column]="column" [blackboardUUID]="blackboard.uuid"></app-blackboard-column>
     </span>
   </ng-container>
 </div>

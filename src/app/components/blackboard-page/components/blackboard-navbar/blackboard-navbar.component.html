@@ -2,7 +2,7 @@
   <div class="title-container">
     {{blackboard.name}}
   </div>
-  <div class="buttons-container">
+  <div class="buttons-container" *ngIf="isBlackboardOwner()">
     <button mat-raised-button class="navbar-button" (click)="openContributorsDialog()">CONTRIBUTORS</button>
     <button mat-raised-button class="navbar-button" (click)="tryToEditBlackboard()">EDIT</button>
     <button mat-raised-button class="navbar-button" (click)="tryToDeleteBlackboard()" color="warn">DELETE</button>
