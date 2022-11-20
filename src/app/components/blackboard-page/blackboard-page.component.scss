@@ -1,9 +1,12 @@
 .main-container {
-  width: 80%;
+  width: 90%;
   height: 700px;
   padding: 12px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
   border-radius: 4px;
+  display: -webkit-flex;
+  -webkit-flex-flow: row;
+  overflow: scroll;
 }
