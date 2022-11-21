@@ -1,6 +1,6 @@
 .ticket-container {
-  width: 280px;
-  height: 120px;
+  width: 238px;
+  height: 110px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -10,10 +10,12 @@
   cursor: move;
 }
 .ticket-title {
-  width: 260px;
-  height: 60px;
+  width: 218px;
+  height: 50px;
   padding: 10px;
   border-radius: 4px 4px 0 0;
+  color: rgb(58, 58, 60);
+  font-size:13px;
 }
 .ticket-options {
   width: 130px;
@@ -23,7 +25,7 @@
   float: left;
 }
 .ticket-color {
-  width: 112px;
+  width: 60px;
   margin: 11px 14px;
   height: 6px;
   border-radius: 6px;
@@ -36,6 +38,7 @@
   margin: 0 4px;
   font-size: 20px;
   cursor: pointer;
+  color: rgb(67, 68, 70);
 }
 .ticket-container:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
