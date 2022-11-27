@@ -8,6 +8,7 @@
   <div class="column-body"
   cdkDropList
   [cdkDropListData]="column.tickets"
+  [id]="column.uuid"
   (cdkDropListDropped)="drop($event)">
     <app-blackboard-ticket  *ngFor="let ticket of column.tickets | ticketSort"
     [ticket]="ticket" [blackboardUUID]="blackboardUUID" [columnUUID]="column.uuid" (deleteTicketEvent)="deleteTicket($event)"></app-blackboard-ticket>

@@ -3,7 +3,7 @@
     {{ticket.name}}
   </div>
   <ng-container *ngIf="ticket.user">
-    <div class="ticket-assigned-user" matTooltip="{{ticket.user.email}}" matTooltipPosition="above">
+    <div class="ticket-assigned-user" matTooltip="{{ticket.user.firstname}} {{ticket.user.lastname}}" matTooltipPosition="above">
       {{ticket.user.firstname[0]}}{{ticket.user.lastname[0]}}
     </div>
     <div class="ticket-color" [ngStyle]="{'background-color': ticket.color}"></div>

@@ -42,6 +42,12 @@ export class BlackboardColumnComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<TicketDto[]>) {
+    this.changeTicketPosition(
+      event.previousContainer.id,
+      event.container.id,
+      event.previousContainer.data[event.previousIndex].uuid,
+      event.currentIndex,
+      );
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -52,6 +58,38 @@ export class BlackboardColumnComponent implements OnInit {
         event.currentIndex,
       );
     }
+
+  }
+
+  private changeTicketPosition(columnUUID : string, newColumnUUID : string, ticketUUID : string, newPosition : number) {
+    this.ticketService.changeTicketPosition(
+      this.blackboardUUID,
+      columnUUID,
+      ticketUUID,
+      newPosition,
+      newColumnUUID
+      )
+      .pipe(
+        tap(() => (this.isLoading = false)),
+        catchError((error) => {
+          this.isLoading = false;
+          this.notificationService.displayNotification(
+            {
+              message: error.error.message,
+            },
+            NotificationType.WARNING
+          );
+          throw new Error("Error while changing ticket position");
+        })
+      ).subscribe(Response =>
+        {
+          this.notificationService.displayNotification(
+            {
+              message: "Ticket position changed",
+            },
+            NotificationType.INFO
+          );
+      });
   }
 
   openTicketAddDialog() {

@@ -20,6 +20,7 @@ export class TicketService {
   private getTickeDetailedtURL : string = 'http://localhost:8080/api/blackboards/';
   private assignUserToTicketURL : string = 'http://localhost:8080/api/blackboards/';
   private removeUserAssigmentToTicketURL : string = 'http://localhost:8080/api/blackboards/';
+  private changeTicketPositionURL : string = 'http://localhost:8080/api/blackboards/';
 
   addTicket(ticket: TicketAddDto, blackboardUUID: string, columnUUID: string) : Observable<TicketDto> {
     return this.http.post<TicketDto>(
@@ -61,5 +62,20 @@ export class TicketService {
       null
       );
   }
+
+  changeTicketPosition(
+      blackboardUUID: string,
+      columnUUID: string,
+      ticketUUID: string,
+      newPosition : number,
+      newColumnUUID : string
+    ) : Observable<TicketDto> {
+    return this.http.put<TicketDto>(
+      this.changeTicketPositionURL + blackboardUUID + '/columns/' + columnUUID +
+      '/tickets/' + ticketUUID + '/changePosition?newPosition=' + newPosition + '&newColumnUUID=' + newColumnUUID,
+      null
+      );
+  }
+
 
 }
