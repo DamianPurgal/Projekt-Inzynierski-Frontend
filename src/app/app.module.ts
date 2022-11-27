@@ -59,6 +59,8 @@ import { CommentsComponent } from './components/dialogs/ticket-dialog/components
 import { CommentComponent } from './components/dialogs/ticket-dialog/components/comment/comment.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommentSortPipe } from './pipes/comment/comment-sort.pipe';
+import { MatMenuModule } from '@angular/material/menu';
+import { CommentAssignedPersonComponent } from './components/dialogs/ticket-dialog/components/comment-assigned-person/comment-assigned-person.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +101,8 @@ import { CommentSortPipe } from './pipes/comment/comment-sort.pipe';
     TicketDialogComponent,
     CommentsComponent,
     CommentComponent,
-    CommentSortPipe
+    CommentSortPipe,
+    CommentAssignedPersonComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +124,8 @@ import { CommentSortPipe } from './pipes/comment/comment-sort.pipe';
     FormsModule,
     MatExpansionModule,
     DragDropModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule
   ],
   providers: [
     {

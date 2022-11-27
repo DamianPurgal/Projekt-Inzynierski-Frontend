@@ -62,7 +62,9 @@ export class BlackboardTicketComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(result => {
+      this.ticket.user = result.user;
+    });
   }
 
   private editTicket(ticket : TicketEditDto) {

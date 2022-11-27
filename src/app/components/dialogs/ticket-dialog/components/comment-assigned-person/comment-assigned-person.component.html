@@ -1,0 +1,11 @@
+<ng-container *ngIf="contributor">
+  <div class="contributor-container" (click)="addContributor()">
+    <div class="contributor-icon">
+      {{contributor.user.firstname[0]}}{{contributor.user.lastname[0]}}
+    </div>
+
+    <div class="contributor-text">
+      {{contributor.user.email}}
+    </div>
+  </div>
+</ng-container>

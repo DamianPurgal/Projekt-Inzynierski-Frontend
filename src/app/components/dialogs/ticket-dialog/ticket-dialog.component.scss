@@ -25,3 +25,54 @@
 .exit-button {
   margin:10px;
 }
+.assign-container {
+  margin-top: 20px;
+  font-size: 12px;
+}
+.assign-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  background-color: rgb(211, 213, 216);
+  border-radius: 50%;
+  line-height: 28px;
+  text-align: center;
+}
+.assign-text {
+  display: inline-block;
+  cursor: pointer;
+  height: 16px;
+  margin-left: 6px;
+  letter-spacing: 2px;
+}
+.contributor-container {
+  margin-top: 10px;
+  font-size: 12px;
+  padding:0px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contributor-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  background-color: rgb(183, 186, 190);
+  border-radius: 50%;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid rgb(183, 186, 190);
+  transition: 0.3s;
+}
+.contributor-text {
+  display: inline-block;
+  height: 16px;
+  margin-left: 6px;
+}
+.contributor-container:hover {
+  background-color: rgb(183, 186, 190);
+}
+.contributor-container:hover > .contributor-icon {
+  border: 1px solid white;
+}

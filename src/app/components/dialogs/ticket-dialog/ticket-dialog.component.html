@@ -10,7 +10,40 @@
     <div class="ticket-description">
       {{ticket.description}}
     </div>
+    <div *ngIf="ticket.user; else notAssigned">
+      <div class="assign-container">
+        <div class="assign-icon">
+          {{ticket.user.firstname[0]}}{{ticket.user.lastname[0]}}
+        </div>
+        <div class="assign-text" [matMenuTriggerFor]="contributorsList" (click)="getContributors()">
+          {{ticket.user.firstname}} {{ticket.user.lastname}}
+        </div>
+      </div>
+    </div>
+    <ng-template #notAssigned>
+      <div class="assign-container">
+        <div class="assign-icon">
+          ?
+        </div>
 
+        <div class="assign-text" [matMenuTriggerFor]="contributorsList" (click)="getContributors()">
+          Assign user
+        </div>
+      </div>
+    </ng-template>
+    <mat-menu #contributorsList="matMenu">
+      <app-comment-assigned-person *ngFor="let contributor of contributors" [contributor]="contributor"
+      (contributorAssignedEvent)="addTicketContributor($event)"></app-comment-assigned-person>
+      <div class="contributor-container" (click)="removeTicketContributor()">
+        <div class="contributor-icon">
+          ?
+        </div>
+
+        <div class="contributor-text">
+          Set as unasigned
+        </div>
+      </div>
+    </mat-menu>
   </div>
 
   <app-comments [comments]="ticket.comments" [blackboardUUID]="ticketInfo.blackboardUUID"

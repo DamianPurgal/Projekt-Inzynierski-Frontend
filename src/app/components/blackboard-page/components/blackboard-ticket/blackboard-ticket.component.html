@@ -2,11 +2,20 @@
   <div class="ticket-title">
     {{ticket.name}}
   </div>
-  <div class="ticket-color" [ngStyle]="{'background-color': ticket.color}"></div>
+  <ng-container *ngIf="ticket.user">
+    <div class="ticket-assigned-user" matTooltip="{{ticket.user.email}}" matTooltipPosition="above">
+      {{ticket.user.firstname[0]}}{{ticket.user.lastname[0]}}
+    </div>
+    <div class="ticket-color" [ngStyle]="{'background-color': ticket.color}"></div>
+  </ng-container>
+
+  <ng-container *ngIf="!ticket.user">
+    <div class="ticket-color-longer" [ngStyle]="{'background-color': ticket.color}"></div>
+  </ng-container>
+
   <div class="ticket-options">
     <mat-icon class="option" (click)="openTicketDetailedDialog()">remove_red_eye</mat-icon>
     <mat-icon class="option" (click)="openTicketEditDialog()"> border_color</mat-icon>
-    <mat-icon class="option"> chat</mat-icon>
     <mat-icon class="option" (click)="openTicketDeleteDialog()">delete_outline</mat-icon>
   </div>
 </div>
