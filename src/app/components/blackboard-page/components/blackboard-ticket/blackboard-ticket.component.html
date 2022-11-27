@@ -4,8 +4,8 @@
   </div>
   <div class="ticket-color" [ngStyle]="{'background-color': ticket.color}"></div>
   <div class="ticket-options">
-    <mat-icon class="option">remove_red_eye</mat-icon>
-    <mat-icon class="option" (click) = "openTicketEditDialog()"> border_color</mat-icon>
+    <mat-icon class="option" (click)="openTicketDetailedDialog()">remove_red_eye</mat-icon>
+    <mat-icon class="option" (click)="openTicketEditDialog()"> border_color</mat-icon>
     <mat-icon class="option"> chat</mat-icon>
     <mat-icon class="option" (click)="openTicketDeleteDialog()">delete_outline</mat-icon>
   </div>

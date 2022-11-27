@@ -25,6 +25,6 @@ export class ContributorComponent implements OnInit {
   }
 
   deleteContributor() {
-    this.deleteContributorEvent.emit(this.contributor.email);
+    this.deleteContributorEvent.emit(this.contributor.user.email);
   }
 }

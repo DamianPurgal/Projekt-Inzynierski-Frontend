@@ -104,7 +104,7 @@ export class BlackboardColumnComponent implements OnInit {
   deleteTicket(ticketUUID: string) {
     this.column.tickets.forEach( (ticket, index) => {
       if (ticket.uuid === ticketUUID) {
-        this.column.tickets.splice(index,1)
+        this.column.tickets.splice(index, 1)
       }
     });
   }

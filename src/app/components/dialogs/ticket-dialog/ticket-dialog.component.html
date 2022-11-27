@@ -1,0 +1,21 @@
+<ng-container *ngIf="ticket">
+  <div class="ticket-container">
+
+    <div class="ticket-name">
+      {{ticket.name}}
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="ticket-description">
+      {{ticket.description}}
+    </div>
+
+  </div>
+
+  <app-comments [comments]="ticket.comments" [blackboardUUID]="ticketInfo.blackboardUUID"
+  [columnUUID]="ticketInfo.columnUUID" [ticketUUID]="ticketInfo.ticketUUID"></app-comments>
+
+  <button mat-stroked-button class="exit-button" (click)="closeDialog()">Exit</button>
+</ng-container>
+

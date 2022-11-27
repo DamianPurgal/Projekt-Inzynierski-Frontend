@@ -114,7 +114,7 @@ export class BlackboardContributorsComponent implements OnInit {
     ).subscribe(Response =>
       {
         this.contributors.forEach( (contributor, index) => {
-          if (contributor.email === contributorEmail) {
+          if (contributor.user.email === contributorEmail) {
             this.contributors.splice(index,1)
           }
         });

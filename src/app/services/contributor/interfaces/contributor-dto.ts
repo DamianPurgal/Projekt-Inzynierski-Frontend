@@ -1,4 +1,6 @@
+import { UserData } from "../../user/interfaces/user-data";
+
 export interface ContributorDto {
-  email: string,
+  user: UserData,
   role: string
 }

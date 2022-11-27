@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { tap, catchError } from 'rxjs';
 import { DeleteTicketComponent } from 'src/app/components/dialogs/delete-ticket/delete-ticket.component';
 import { EditTicketComponent } from 'src/app/components/dialogs/edit-ticket/edit-ticket.component';
+import { TicketDialogComponent } from 'src/app/components/dialogs/ticket-dialog/ticket-dialog.component';
 import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { TicketDto } from 'src/app/services/ticket/interfaces/ticket-dto';
@@ -49,6 +50,19 @@ export class BlackboardTicketComponent implements OnInit {
 
       this.editTicket(ticketToEdit);
     });
+  }
+
+  openTicketDetailedDialog() {
+    const dialogRef = this.dialog.open(TicketDialogComponent, {
+      width: '600px',
+      data: {
+        blackboardUUID : this.blackboardUUID,
+        columnUUID : this.columnUUID,
+        ticketUUID : this.ticket.uuid
+      }
+    });
+
+    dialogRef.afterClosed().subscribe();
   }
 
   private editTicket(ticket : TicketEditDto) {

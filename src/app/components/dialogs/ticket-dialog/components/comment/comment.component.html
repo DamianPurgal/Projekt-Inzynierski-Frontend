@@ -1,0 +1,18 @@
+<ng-container *ngIf="comment">
+  <div class="comment-container">
+    <div class="comment-bar">
+      <div class="comment-author">
+        <a matTooltip="{{comment.author.email}}" matTooltipPosition="right" style="cursor:pointer">
+          {{comment.author.firstname}} {{comment.author.lastname}}
+        </a>
+      </div>
+      <div class="comment-date">
+        {{date}}
+        <mat-icon *ngIf="isLoggedUserAuthor()" class="delete-icon" matTooltip="Delete" matTooltipPosition="right" (click)="deleteComment()">clear</mat-icon>
+      </div>
+    </div>
+    <div class="comment-content">
+      {{comment.text}}
+    </div>
+  </div>
+</ng-container>

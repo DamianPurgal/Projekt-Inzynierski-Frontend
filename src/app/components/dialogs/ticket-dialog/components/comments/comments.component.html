@@ -1,0 +1,35 @@
+<div class="comments-container">
+  <div class="comments-title">
+    Comments
+  </div>
+  <div class="divider"></div>
+
+  <div class="comments-list-container">
+    <span *ngFor="let comment of comments | commentSort">
+      <app-comment [comment]="comment" (deleteCommentEvent)="deleteComment($event)"></app-comment>
+    </span>
+
+
+  </div>
+  <form [formGroup]="addCommentForm">
+    <div class="comment-container">
+      <div class="comment-bar">
+        <div class="comment-author">
+          <a>
+            Add comment
+          </a>
+        </div>
+        <div class="comment-button">
+          <button mat-stroked-button color="primary" [disabled]="addCommentForm.invalid" (click)="addComment()">send</button>
+        </div>
+      </div>
+      <div class="comment-content">
+        <mat-form-field class="comment-input">
+          <mat-label>Leave a comment</mat-label>
+          <input matInput placeholder="Looks good!" autocomplete="off" [(ngModel)]="commentToAddText" formControlName="text">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+

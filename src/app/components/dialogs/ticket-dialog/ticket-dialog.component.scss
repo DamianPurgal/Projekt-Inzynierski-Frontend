@@ -1,0 +1,27 @@
+.ticket-container {
+  padding: 20px;
+  min-height: 120px;
+  background-color: rgb(240, 242, 247);
+  border-radius: 4px;
+}
+.ticket-name {
+  font-size: 24px;
+  padding:4px;
+  color:rgb(67, 67, 67);
+}
+.divider {
+  width: 30%;
+  height: 3px;
+  background-color:rgb(67, 67, 67);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.ticket-description {
+  font-size: 16px;
+  padding: 4px;
+  color:rgb(67, 67, 67);
+}
+.exit-button {
+  margin:10px;
+}

@@ -7,7 +7,7 @@ import { ContributorDto } from 'src/app/services/contributor/interfaces/contribu
 export class ContributorSortPipe implements PipeTransform {
 
   transform(contributors: ContributorDto[]): ContributorDto[] {
-    return contributors.sort((a, b) => b.email.localeCompare(a.email))
+    return contributors.sort((a, b) => b.user.email.localeCompare(a.user.email))
           .sort((a, b) => b.role.localeCompare(a.role));
   }
 

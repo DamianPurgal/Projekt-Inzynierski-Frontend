@@ -54,6 +54,11 @@ import { DeleteTicketComponent } from './components/dialogs/delete-ticket/delete
 import { AddColumnComponent } from './components/dialogs/add-column/add-column.component';
 import { EditColumnComponent } from './components/dialogs/edit-column/edit-column.component';
 import { DeleteColumnComponent } from './components/dialogs/delete-column/delete-column.component';
+import { TicketDialogComponent } from './components/dialogs/ticket-dialog/ticket-dialog.component';
+import { CommentsComponent } from './components/dialogs/ticket-dialog/components/comments/comments.component';
+import { CommentComponent } from './components/dialogs/ticket-dialog/components/comment/comment.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { CommentSortPipe } from './pipes/comment/comment-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -90,7 +95,11 @@ import { DeleteColumnComponent } from './components/dialogs/delete-column/delete
     DeleteTicketComponent,
     AddColumnComponent,
     EditColumnComponent,
-    DeleteColumnComponent
+    DeleteColumnComponent,
+    TicketDialogComponent,
+    CommentsComponent,
+    CommentComponent,
+    CommentSortPipe
   ],
   imports: [
     BrowserModule,
@@ -111,7 +120,8 @@ import { DeleteColumnComponent } from './components/dialogs/delete-column/delete
     MatCardModule,
     FormsModule,
     MatExpansionModule,
-    DragDropModule
+    DragDropModule,
+    MatTooltipModule
   ],
   providers: [
     {
