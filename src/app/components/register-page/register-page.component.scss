@@ -1,25 +1,40 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(96, 54, 170, 1);
+  background-image: linear-gradient(150deg, rgba(96, 54, 170, 1) 5%, rgba(103, 58, 183, 1) 33%, rgba(137, 58, 183, 1) 60%, rgba(208, 0, 255, 1) 100%);
+}
 .register-panel {
-  margin-top:80px;
-  width: 600px;
-  height: 640px;
+  margin-top:60px;
+  width: 420px;
+  height: 680px;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid lightgrey;
   border-radius: 1%;
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   -webkit-box-shadow: 0px 0px 21px -14px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 0px 21px -14px rgba(66, 68, 90, 1);
   box-shadow: 0px 0px 21px -14px rgba(66, 68, 90, 1);
 }
 .register-text {
-  color: #673ab7;
-  font-size:27px;
-  width:100%;
+  background: linear-gradient(150deg, rgba(96, 54, 170, 1) 5%, rgba(103, 58, 183, 1) 33%, rgba(137, 58, 183, 1) 60%, rgba(208, 0, 255, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:28px;
+  padding: 10px;
   text-align: center;
-  margin-top:60px;
-  margin-bottom:60px;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   font-weight: bold;
+  font-family: 'Secular One', sans-serif;
+}
+.title-container {
+  height: 70px;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .form-input {
   width: 300px;
@@ -35,33 +50,64 @@
   padding-right: 10px;
   letter-spacing: 1px;
 }
-.aligned-to-center {
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.buttons {
-  width:440px;
-  margin-top:20px;
-  margin-right: auto;
-  margin-left: auto;
-  align-items: center;
-}
-.spacer {
-  width:250px;
-  height:10px;
-  display: inline-block;
-}
 .button {
-  height:40px;
-  width: 90px;
-  font-size: 17px;
+  width: 60%;
+  padding: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  background-color: rgba(96, 54, 170, 1);
+  background-image: linear-gradient(150deg, rgba(96, 54, 170, 1) 5%, rgba(103, 58, 183, 1) 33%, rgba(137, 58, 183, 1) 60%, rgba(208, 0, 255, 1) 100%);
+  letter-spacing: 2px;
+  font-size:15px;
+  transition: 0.3s;
+  border: 2px solid white;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Secular One', sans-serif;
+}
+.button:hover {
+  background-color: white;
+  background-image: none;
+  border: 2px solid rgba(96, 54, 170, 1);
+  color: rgba(96, 54, 170, 1);
+}
+.button:disabled {
+  cursor: default;
+  background-color: lightgrey;
+  background-image: none;
+  border: 2px solid white;
+  color: rgb(137, 137, 137);
 }
 .loading-icon {
+  margin: 10px 0;
   margin-left: auto;
   margin-right: auto;
-  top:100px;
 }
 .form-content {
-  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+  color:rgba(66, 68, 90, 1);
+}
+.login {
+  margin-top: 2px;
+  cursor: pointer;
+  color: rgb(26, 27, 35);
 }

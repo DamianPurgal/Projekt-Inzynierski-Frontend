@@ -1,0 +1,87 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(96, 54, 170, 1);
+  background-image: linear-gradient(150deg, rgba(96, 54, 170, 1) 5%, rgba(103, 58, 183, 1) 33%, rgba(137, 58, 183, 1) 60%, rgba(208, 0, 255, 1) 100%);
+}
+.bottom-container {
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  height: 40vh;
+  width: 100vw;
+  background-color: rgba(96, 54, 170, 0);
+  background-image: linear-gradient(177deg, rgba(96, 54, 170, 0) 45%, rgba(253, 240, 255, 1) 45.4%, rgba(255, 255, 255, 1) 84%);
+}
+.title-container {
+  display: flex;
+  justify-content: center;
+  height: 15vh;
+}
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.info-card {
+  max-width: 13vw;
+  margin: 0 30px;
+  margin-top: 32px;
+  min-width: 220px;
+  z-index: 2;
+}
+.info-card:nth-child(2) {
+  bottom: 20px;
+}
+mat-card {
+  padding-bottom: 0px;
+}
+.title {
+  margin-top: 10vh;
+  font-size: 60px;
+  letter-spacing: 16px;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+}
+.subtitle-container {
+  height: 16vh;
+  width: 330px;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 2px;
+  margin-right: auto;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+}
+.buttons-container {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.button {
+  height: 20px;
+  max-width: 13vw;
+  margin: 0 55px;
+  margin-top: 16px;
+  min-width: 220px;
+  z-index: 2;
+  padding: 10px;
+  border-radius: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.6s;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.button:hover {
+  background-color: white;
+  color: rgba(103, 58, 183, 1);
+}

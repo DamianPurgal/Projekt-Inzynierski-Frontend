@@ -1,1 +1,55 @@
-<p>main-page works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+
+<div class="main-container">
+
+  <app-navbar-transparent></app-navbar-transparent>
+
+  <div class="title-container">
+    <div class="title">DEEMOR</div>
+  </div>
+  <div class="subtitle-container">
+    TRACK PROGRESS<br/>
+    COLLABORATE<br/>
+    DISCUSS<br/>
+  </div>
+  <div class="buttons-container">
+    <div class="button" *ngIf="!isUserLogged" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Sign up
+    </div>
+    <div class="button" *ngIf="isUserLogged" routerLink="/blackboards" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Blackboards
+    </div>
+    <div class="button">
+      About page
+    </div>
+  </div>
+  <div class="cards-container">
+    <mat-card class="info-card">
+      <mat-card-header>
+        <mat-card-title>Create workspaces</mat-card-title>
+        <mat-card-subtitle>Create as many as you need!</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="/assets/images/blackboard.png" alt="blackboard" style="height:220px">
+    </mat-card>
+    <mat-card class="info-card">
+      <mat-card-header>
+        <mat-card-title>Contribute</mat-card-title>
+        <mat-card-subtitle>Add people to collaborate with</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="/assets/images/contributor.png" alt="contributor">
+    </mat-card>
+    <mat-card class="info-card">
+      <mat-card-header>
+        <mat-card-title>Share your thoughts!</mat-card-title>
+        <mat-card-subtitle>by commenting on tasks</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="/assets/images/comments.png" alt="comments" >
+    </mat-card>
+  </div>
+
+  <div class="bottom-container"></div>
+</div>
+
+

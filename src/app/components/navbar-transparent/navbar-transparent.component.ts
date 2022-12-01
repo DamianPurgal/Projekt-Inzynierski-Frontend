@@ -5,11 +5,11 @@ import { NotificationType } from 'src/app/services/notification/enums/notificati
 import { NotificationService } from 'src/app/services/notification/notification.service';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  selector: 'app-navbar-transparent',
+  templateUrl: './navbar-transparent.component.html',
+  styleUrls: ['./navbar-transparent.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class NavbarTransparentComponent implements OnInit {
 
   isUserLogged: boolean = false;
 

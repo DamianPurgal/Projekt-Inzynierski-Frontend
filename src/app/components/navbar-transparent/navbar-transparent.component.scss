@@ -1,0 +1,20 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.logo {
+  letter-spacing: 2.5px;
+  margin-right: 1%;
+  cursor: pointer;
+}
+.logo-icon {
+  margin-left: 1%;
+  cursor: pointer;
+}
+.navbar {
+  background-color: rgba(255,255,255,0);
+  color: white;
+  transition: 0.3s;
+}
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.19);
+}

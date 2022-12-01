@@ -61,6 +61,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommentSortPipe } from './pipes/comment/comment-sort.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommentAssignedPersonComponent } from './components/dialogs/ticket-dialog/components/comment-assigned-person/comment-assigned-person.component';
+import { MatRippleModule } from '@angular/material/core';
+import { NavbarTransparentComponent } from './components/navbar-transparent/navbar-transparent.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,8 @@ import { CommentAssignedPersonComponent } from './components/dialogs/ticket-dial
     CommentsComponent,
     CommentComponent,
     CommentSortPipe,
-    CommentAssignedPersonComponent
+    CommentAssignedPersonComponent,
+    NavbarTransparentComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +128,8 @@ import { CommentAssignedPersonComponent } from './components/dialogs/ticket-dial
     MatExpansionModule,
     DragDropModule,
     MatTooltipModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRippleModule
   ],
   providers: [
     {

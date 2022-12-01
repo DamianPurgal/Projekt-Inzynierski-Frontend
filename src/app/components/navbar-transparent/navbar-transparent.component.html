@@ -1,0 +1,23 @@
+<p style="margin-bottom:0px;">
+  <mat-toolbar class="navbar">
+
+    <mat-icon class="logo-icon" mat-icon-button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">dashboard</mat-icon>
+    <span class="logo" mat-icon-button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Demor</span>
+
+    <button mat-button color="basic" mat-icon-button routerLink="/blackboards" routerLinkActive="active" ariaCurrentWhenActive="page">Blackboards</button>
+
+    <span class="spacer"></span>
+    <button mat-icon-button routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="!isUserLogged">
+      <mat-icon>vpn_key</mat-icon>
+    </button>
+
+
+    <button mat-icon-button routerLink="/userinfo" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="isUserLogged">
+      <mat-icon>person_outline</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="logout()" color="primary" style="color:white;" *ngIf="isUserLogged">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>

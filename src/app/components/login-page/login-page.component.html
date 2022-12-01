@@ -1,36 +1,41 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 
-<div class="login-page">
-  <div class="login-panel">
-    <p class="login-text">Login</p>
-    <div class="login-icon-container">
-      <mat-spinner *ngIf="isLoading" class="loading-icon" [@enterAnimation] [diameter]="130"></mat-spinner>
-      <mat-icon class="login-icon" *ngIf="!isLoading" [@enterAnimation]>dashboard</mat-icon>
+<div class="main-container">
+  <app-navbar-transparent></app-navbar-transparent>
+
+  <div class="login-page">
+    <div class="login-panel">
+      <div class="title-container">
+        <div class="login-text" *ngIf="!isLoading">Login</div>
+        <mat-spinner *ngIf="isLoading" class="loading-icon" [@enterAnimation] [diameter]="50"></mat-spinner>
+      </div>
+      <div class="inputs-container">
+        <mat-form-field appearance="outline" class="form-input">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="myEmail123@gmail.com" #usernameInput>
+          <mat-icon matSuffix style="color: #673ab7;">alternate_email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-input">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="passwordHide ? 'password' : 'text'" (keydown.enter)="login()" #passwordInput>
+          <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+            <mat-icon style="color: #673ab7;">{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div class="buttons-container">
+        <div class="button" (click)="login()">LOGIN</div>
+      </div>
+
+      <div class="signup-container">
+        <div>or sign up using</div>
+        <div class="signup" routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">SIGN UP</div>
+      </div>
     </div>
-
-    <p class="aligned-to-center">
-      <mat-form-field appearance="outline" class="form-input">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="myEmail123@gmail.com" #usernameInput>
-        <mat-icon matSuffix style="color: #673ab7;">alternate_email</mat-icon>
-      </mat-form-field>
-    </p>
-
-    <p class="aligned-to-center">
-      <mat-form-field appearance="outline" class="form-input">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="passwordHide ? 'password' : 'text'" (keydown.enter)="login()" #passwordInput>
-        <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
-          <mat-icon style="color: #673ab7;">{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-    </p>
-
-    <div class="buttons">
-        <span class="link-text" routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">&#60;&#60; Register</span>
-      <span class="spacer"></span>
-        <button mat-raised-button color="primary" class="button" (click)="login()">Login</button>
-    </div>
-
-
   </div>
+
 </div>
