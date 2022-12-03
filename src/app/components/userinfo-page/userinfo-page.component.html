@@ -1,7 +1,18 @@
-<app-navbar></app-navbar>
-<div class="main-panel">
+<div class="main-container">
+  <app-navbar-transparent></app-navbar-transparent>
+  <div class="main-panel">
+    <div class="main-panel-left">
+      <app-userinfo-navbar></app-userinfo-navbar>
+    </div>
+
+    <div class="main-panel-right">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- <div>
   <div class="main-panel-left">
-    <mat-icon class="main-panel-left-icon">account_circle</mat-icon>
       <app-userinfo-navbar></app-userinfo-navbar>
   </div>
   <div class="main-panel-right" *ngIf="!isLoading" >
@@ -9,53 +20,10 @@
         <p class="header-text">Welcome back {{userData.firstname}}!</p>
     </div>
     <div class="body-left">
-      <div class="section-header-text">
-        User info
-      </div>
-      <div class="data-row">
-        <span class="data-row-label">Email:</span>
-        <span>{{userData.email}}</span>
-      </div>
-      <div class="data-row-divider">
-        <mat-divider></mat-divider>
-      </div>
-      <div class="data-row">
-        <span class="data-row-label">Firstname:</span>
-        <span>{{userData.firstname}}</span>
-      </div>
-      <div class="data-row-divider">
-        <mat-divider></mat-divider>
-      </div>
-      <div class="data-row">
-        <span class="data-row-label">Lastname:</span>
-        <span>{{userData.lastname}}</span>
-      </div>
-      <div class="data-row-divider">
-        <mat-divider></mat-divider>
-      </div>
-
-    </div>
-    <div class="body-right">
-      <div class="section-header-text">
-        Statistics
-      </div>
-      <div class="data-row">
-        <span class="data-row-label">Number of x:</span>
-        <span>43</span>
-      </div>
-      <div class="data-row-divider">
-        <mat-divider></mat-divider>
-      </div>
-      <div class="data-row">
-        <span class="data-row-label">Number of z:</span>
-        <span>14</span>
-      </div>
-      <div class="data-row-divider">
-        <mat-divider></mat-divider>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
   <div class="loading-container" *ngIf="isLoading" >
     <mat-spinner class="loading-icon" [diameter]="130"></mat-spinner>
   </div>
-</div>
+</div> -->

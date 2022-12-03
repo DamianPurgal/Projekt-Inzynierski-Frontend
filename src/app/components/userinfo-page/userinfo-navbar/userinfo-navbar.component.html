@@ -1,30 +1,19 @@
 <div class="options-container">
-  <mat-list>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-icon-button routerLink="/userinfo" routerLinkActive="active" ariaCurrentWhenActive="page" class="option">
-      <mat-icon class="logo-icon">info</mat-icon>
-      <span class="option-text">User details</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-icon-button routerLink="/user/edit" routerLinkActive="active" ariaCurrentWhenActive="page" class="option">
-      <mat-icon class="logo-icon">build</mat-icon>
-      <span class="option-text">Edit user informations</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-icon-button routerLink="/user/delete" routerLinkActive="active" ariaCurrentWhenActive="page" class="option">
-      <mat-icon class="logo-icon">highlight_off</mat-icon>
-      <span class="option-text">Delete account</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-icon-button (click)="logout()" class="option">
-      <mat-icon class="logo-icon">exit_to_app</mat-icon>
-      <span class="option-text">Logout</span>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <!-- <mat-list-item mat-icon-button routerLink="/user/help" routerLinkActive="active" ariaCurrentWhenActive="page" class="option">
-      <mat-icon class="logo-icon">help</mat-icon>
-      <span class="option-text">Help</span>
-    </mat-list-item>
-    <mat-divider></mat-divider> -->
-  </mat-list>
+
+  <div routerLink="info" routerLinkActive="active" ariaCurrentWhenActive="page" class="option" matRipple>
+    User details
+  </div>
+
+  <div routerLink="edit" routerLinkActive="active" ariaCurrentWhenActive="page" class="option" matRipple>
+    Edit user informations
+  </div>
+
+  <div routerLink="delete" routerLinkActive="active" ariaCurrentWhenActive="page" class="option" matRipple>
+    Delete account
+  </div>
+
+  <div routerLink="info" routerLinkActive="active" ariaCurrentWhenActive="page" class="option" matRipple>
+    Logout
+  </div>
+
 </div>

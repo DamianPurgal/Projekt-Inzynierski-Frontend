@@ -1,27 +1,13 @@
-<app-navbar></app-navbar>
-<div class="main-panel">
-  <div class="main-panel-left">
-    <mat-icon class="main-panel-left-icon">account_circle</mat-icon>
-      <app-userinfo-navbar></app-userinfo-navbar>
-  </div>
-  <div class="loading-container" *ngIf="isLoading">
-    <mat-spinner class="loading-icon" [diameter]="130"></mat-spinner>
-  </div>
-  <div class="main-panel-right" *ngIf="!isLoading">
-    <div class="main-panel-right-header">
-      <p class="header-text">Delete Your Account</p>
-    </div>
-    <p class="section-header">Hello user,</p>
-    <div class="body-container">
-      We are sorry to hear that you wish to leave our website. It's been a pleasure hosting you on our app and we hope you'll come back to us again sometime! :)
-    </div>
-    <p class="section-header">Delete Your Account</p>
-    <div class="body-container">
-      Are you sure you want to delete your account on this web application? Remember that deleting your account entails the complete deletion of your account data. All boards, comments, etc. created by you will be deleted.
-        <div class="button-container">
-          <span class="spacer"></span>
-          <button mat-raised-button color="primary" class="button" (click)="deleteLoggedUserAccount()">Delete account</button>
-        </div>
-    </div>
-  </div>
+<div class="title">
+  DELETE USER ACCOUNT
 </div>
+
+<div class="divider"></div>
+
+<div class="main-text">
+  Hello user,
+  We are sorry to hear that you wish to leave our website. It's been a pleasure hosting you on our app and we hope you'll come back to us again sometime! :)
+  Are you sure you want to delete your account on this web application? Remember that deleting your account entails the complete deletion of your account data. All boards, comments, etc. created by you will be deleted.
+</div>
+
+<button mat-raised-button color="primary" class="button" (click)="deleteLoggedUserAccount()">Delete account</button>

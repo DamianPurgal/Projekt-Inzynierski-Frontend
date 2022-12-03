@@ -63,6 +63,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CommentAssignedPersonComponent } from './components/dialogs/ticket-dialog/components/comment-assigned-person/comment-assigned-person.component';
 import { MatRippleModule } from '@angular/material/core';
 import { NavbarTransparentComponent } from './components/navbar-transparent/navbar-transparent.component';
+import { UserinfoInfoComponent } from './components/userinfo-page/userinfo-info/userinfo-info.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { NavbarTransparentComponent } from './components/navbar-transparent/navb
     CommentComponent,
     CommentSortPipe,
     CommentAssignedPersonComponent,
-    NavbarTransparentComponent
+    NavbarTransparentComponent,
+    UserinfoInfoComponent
   ],
   imports: [
     BrowserModule,

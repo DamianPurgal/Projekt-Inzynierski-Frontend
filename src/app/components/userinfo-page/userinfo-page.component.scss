@@ -1,94 +1,29 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(96, 54, 170, 1);
+  background-image: linear-gradient(150deg, rgba(96, 54, 170, 1) 5%, rgba(103, 58, 183, 1) 33%, rgba(137, 58, 183, 1) 60%, rgba(208, 0, 255, 1) 100%);
+}
 .main-panel {
-  width: 70%;
-  height: 800px;
-  min-width: 1050px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  border: 2px solid lightgrey;
-  border-radius: 10px 10px 10px 10px;
-  -webkit-box-shadow: 0px 0px 17px -11px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 0px 17px -11px rgba(66, 68, 90, 1);
-  box-shadow: 0px 0px 17px -11px rgba(66, 68, 90, 1);
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .main-panel-left {
-  height: 100%;
-  width: 25%;
-  border-right: 1px solid lightgrey;
-  float:left;
-  min-width:300px;
+  width: 17vw;
+  min-width: 260px;
+  height: 60vh;
+  margin-right: 2vw;
 }
 .main-panel-right {
-  width: 68%;
-  float:left;
-  padding:3%;
+  width: 44vw;
+  min-width: 500px;
+  padding: 10px;
+  height: 54vh;
+  background-color: white;
+  border-radius: 12px;
+  -webkit-box-shadow: 3px 5px 24px -11px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 3px 5px 24px -11px rgba(66, 68, 90, 1);
+  box-shadow: 3px 5px 24px -11px rgba(66, 68, 90, 1);
 }
-.main-panel-left-icon {
-  display: block;
-  width: 100%;
-  text-align: center;
-  height: 200px;
-  margin-top:50px;
-  margin-bottom:10px;
-  font-size: 200px;
-  background: -webkit-linear-gradient(#884cef, #421f80);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.main-panel-right-header {
-  font-size:40px;
-  padding:20px;
-}
-.header-text {
-  padding-bottom:30px;
-  border-bottom: 10px solid #884cef;
-  text-overflow: clip;
-  max-width: 60%;
-}
-.loading-container {
-  float:left;
-  width:75%;
-  height:900px;
-}
-.loading-icon {
-  margin-top:320px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.body-left {
-  float:left;
-  width: 42%;
-  height: 100px;
-  padding:20px;
-}
-.body-right {
-  float:left;
-  width: 42%;
-  height: 100px;
-  padding:20px;
-}
-.section-header-text {
-  font-size:24px;
-  padding:10px;
-  border-bottom: 4px solid lightgrey;
-  width:30%;
-  margin-bottom:30px;
-}
-.data-row {
-  padding:16px;
-  font-size:19px;
-}
-.data-row-label {
-  color: rgb(36, 36, 36);
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-right: 10px;
-}
-.data-row-content {
-  color: rgb(95, 95, 95);
-}
-.data-row-divider {
-  width: 75%;
-  margin-bottom:10px;
-}
-// #673ab7

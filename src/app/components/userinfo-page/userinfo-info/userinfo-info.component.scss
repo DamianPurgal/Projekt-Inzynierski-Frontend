@@ -15,17 +15,12 @@
   margin-left: 30px;
   height: 2px;
 }
-.button {
-  width: 150px;
-  height: 40px;
-  font-size: 16px;
-  background: -webkit-linear-gradient(rgb(199, 11, 11), #d00a0a);
-  float: right;
-  margin-right: 80px;
+.user-output {
+  margin-left: 30px;
+  margin-top: 20px;
 }
-.main-text {
-  padding: 30px;
-  color:rgb(54, 54, 54);
-  text-align: justify;
-  line-height: 22px;
+.user-output-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:rgb(82, 82, 82);
 }

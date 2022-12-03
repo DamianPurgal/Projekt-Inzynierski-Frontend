@@ -67,7 +67,7 @@ export class UserinfoEditComponent implements OnInit {
       })
     ).subscribe(Response =>
       {
-        this.router.navigate(['/userinfo']);
+        this.router.navigate(['/user/info']);
         this.notificationService.displayNotification(
           {
             message: "User data saved"

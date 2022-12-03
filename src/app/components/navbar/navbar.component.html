@@ -7,15 +7,12 @@
     <button mat-button color="basic" mat-icon-button routerLink="/blackboards" routerLinkActive="active" ariaCurrentWhenActive="page">Blackboards</button>
 
     <span class="spacer"></span>
-    <!-- <button mat-icon-button>
-      <mat-icon>verified_user</mat-icon>
-    </button> -->
     <button mat-icon-button routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="!isUserLogged">
       <mat-icon>vpn_key</mat-icon>
     </button>
 
 
-    <button mat-icon-button routerLink="/userinfo" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="isUserLogged">
+    <button mat-icon-button routerLink="/user/info" routerLinkActive="active" ariaCurrentWhenActive="page" *ngIf="isUserLogged">
       <mat-icon>person_outline</mat-icon>
     </button>
 

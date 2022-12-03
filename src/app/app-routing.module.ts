@@ -12,16 +12,23 @@ import { UserinfoDeleteComponent } from './components/userinfo-page/userinfo-del
 import { UserinfoHelpComponent } from './components/userinfo-page/userinfo-help/userinfo-help.component';
 import { BlackboardListPageComponent } from './components/blackboard-list-page/blackboard-list-page.component';
 import { BlackboardPageComponent } from './components/blackboard-page/blackboard-page.component';
+import { UserinfoInfoComponent } from './components/userinfo-page/userinfo-info/userinfo-info.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'info', component: InfoPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'userinfo', component: UserinfoPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
-  { path: 'user/edit', component: UserinfoEditComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
-  { path: 'user/delete', component: UserinfoDeleteComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
-  { path: 'user/help', component: UserinfoHelpComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
+  { path: 'user', component: UserinfoPageComponent,
+    data:{authRequired: true},
+    canActivate: [AuthGuard],
+    children: [
+      {path: 'info', component: UserinfoInfoComponent},
+      {path: 'edit', component: UserinfoEditComponent},
+      {path: 'delete', component: UserinfoDeleteComponent},
+      {path: 'help', component: UserinfoHelpComponent}
+    ]
+  },
   { path: 'blackboards', component: BlackboardListPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: 'blackboard/:uuid', component: BlackboardPageComponent, data:{authRequired: true}, canActivate: [AuthGuard]},
   { path: '**', component: NotFoundPageComponent }

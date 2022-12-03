@@ -1,15 +1,23 @@
 .options-container {
-  padding: 40px;
+  padding:6px;
 }
 .option {
   cursor: pointer;
-  color: lighgrey;
+  background-color: rgba($color: #ffffff, $alpha: 0);
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.332);
+  border-radius: 10px;
+  color: white;
   transition: 0.3s;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .option:hover {
-  color: #673ab7;
-}
-.option-text {
-  margin-left:10px;
-  font-weight: 500;
+  color: white;
+  background-color: rgba($color: #ffffff, $alpha: 0.07);
 }
