@@ -16,7 +16,7 @@ import { UserinfoInfoComponent } from './components/userinfo-page/userinfo-info/
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'info', component: InfoPageComponent },
+  { path: 'help', component: InfoPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'user', component: UserinfoPageComponent,

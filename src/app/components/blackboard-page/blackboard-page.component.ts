@@ -32,9 +32,80 @@ export class BlackboardPageComponent implements OnInit {
     ) {
     this.linkUUID = this.route.snapshot.paramMap.get('uuid') ?? '';
     this.getBlackboardDetailedData();
+    setInterval(() => {this.refreshBlackboardData()}, 10000);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+  }
+
+  private refreshBlackboardData() {
+    this.blackboardService.getBlackboardDetailed(this.linkUUID)
+      .pipe(
+        tap(() => (this.isLoading = false)),
+        catchError((error) => {
+          this.isLoading = false;
+          this.notificationService.displayNotification(
+            {
+              message: error.error.message,
+            },
+            NotificationType.WARNING
+          );
+          throw new Error("Error while fetching blackboard data");
+        })
+      ).subscribe(Response =>
+        {
+          if (this.isDataChanged(Response)) {
+            this.blackboardDetailed = Response;
+            this.blackboard = {
+              uuid: Response.uuid,
+              name: Response.name,
+              description: Response.description,
+              color: Response.color,
+              role: Response.role
+            }
+            this.notificationService.displayNotification(
+              {
+                message: "Blackboard refreshed",
+              },
+              NotificationType.INFO
+            );
+          }
+      });
+  }
+
+  private isDataChanged(data : BlackboardDetailedDto) {
+    for (var columnData of data.columns) {
+      var column = this.blackboardDetailed.columns.find((col) => {
+        return col.uuid == columnData.uuid
+      });
+      if (column == undefined) {
+        return true;
+      }
+      if (column.color !== columnData.color || column.name !== columnData.name || column.position !== columnData.position) {
+        return true;
+      }
+      for (var ticketData of columnData.tickets) {
+        var ticket = column?.tickets.find((tic) => {
+          return tic.uuid == ticketData.uuid;
+        });
+        if (ticket == undefined) {
+          return true;
+        }
+        if (ticket.color !== ticketData.color || ticket.name !== ticketData.name || ticket.position !== ticketData.position) {
+          return true;
+        }
+        if (ticket.user) {
+          if (ticket.user.email !== ticketData.user.email) {
+            return true;
+          }
+        }
+
+      }
+    }
+    return false;
+  }
+
 
   private getBlackboardDetailedData() {
     this.blackboardService.getBlackboardDetailed(this.linkUUID)
@@ -121,4 +192,6 @@ export class BlackboardPageComponent implements OnInit {
           );
       });
   }
+
+
 }

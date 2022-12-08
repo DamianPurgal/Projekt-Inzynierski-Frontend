@@ -10,11 +10,7 @@ export class AuthorizationService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("AUTORYZACJA OOOO");
-    console.log(sessionStorage.getItem('username'));
-    console.log(sessionStorage.getItem('accessToken'));
     if (sessionStorage.getItem('username') && sessionStorage.getItem('accessToken')) {
-      console.log("AUTORYZACJA USTAWIONA OOOO");
       req = req.clone({
         setHeaders: {
           Authorization: sessionStorage.getItem('accessToken') || ''

@@ -29,7 +29,6 @@ export class JwtAuthService {
 
   isUserLogged() {
     let user = sessionStorage.getItem("username");
-    console.log(!(user === null));
     return !(user === null);
   }
 
