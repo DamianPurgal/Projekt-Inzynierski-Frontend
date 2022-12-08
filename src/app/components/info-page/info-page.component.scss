@@ -15,7 +15,7 @@
   height: 24vw;
   min-width: 400px;
   min-height: 300px;
-  background-color: red;
+  background-color: white;
   border-radius: 20px;
   -webkit-box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
@@ -45,4 +45,34 @@
   padding: 10px;
   color: white;
   text-align: justify;
+}
+.subtitle-container {
+  height: 30vh;
+  width: 430px;
+  min-height: 400px;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 2px;
+  margin-right: auto;
+  margin-top:20px;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+}
+.help-option {
+  font-size: 16px;
+  margin-top:2px;
+}
+.title-container {
+  display: flex;
+  justify-content: center;
+  height: 15vh;
+}
+.title {
+  margin-top: 10vh;
+  font-size: 60px;
+  letter-spacing: 16px;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
 }
