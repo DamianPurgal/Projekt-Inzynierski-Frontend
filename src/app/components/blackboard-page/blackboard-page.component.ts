@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap, catchError } from 'rxjs';
@@ -15,12 +15,13 @@ import { NotificationService } from 'src/app/services/notification/notification.
   templateUrl: './blackboard-page.component.html',
   styleUrls: ['./blackboard-page.component.scss']
 })
-export class BlackboardPageComponent implements OnInit {
+export class BlackboardPageComponent implements OnInit, OnDestroy{
 
   linkUUID: string;
   isLoading: boolean = false;
   blackboard!: BlackboardInfo;
   blackboardDetailed!: BlackboardDetailedDto;
+  refreshIntervalId;
 
   constructor(
     private blackboardService: BlackboardService,
@@ -32,7 +33,10 @@ export class BlackboardPageComponent implements OnInit {
     ) {
     this.linkUUID = this.route.snapshot.paramMap.get('uuid') ?? '';
     this.getBlackboardDetailedData();
-    setInterval(() => {this.refreshBlackboardData()}, 10000);
+    this.refreshIntervalId = setInterval(() => {this.refreshBlackboardData()}, 10000);
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.refreshIntervalId);
   }
 
   ngOnInit(): void {
