@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  demor-frontend:
+    build: ./
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:80
