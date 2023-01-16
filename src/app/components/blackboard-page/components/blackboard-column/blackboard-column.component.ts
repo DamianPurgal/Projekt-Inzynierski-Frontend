@@ -1,12 +1,10 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { tick } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { tap, catchError } from 'rxjs';
 import { AddTicketComponent } from 'src/app/components/dialogs/add-ticket/add-ticket.component';
 import { DeleteColumnComponent } from 'src/app/components/dialogs/delete-column/delete-column.component';
 import { EditColumnComponent } from 'src/app/components/dialogs/edit-column/edit-column.component';
-import { BlackboardAdd } from 'src/app/services/blackboard/interfaces/blackboard-add';
 import { ColumnService } from 'src/app/services/column/column.service';
 import { ColumnDto } from 'src/app/services/column/interfaces/column-dto';
 import { ColumnEditDto } from 'src/app/services/column/interfaces/column-edit-dto';
@@ -15,6 +13,7 @@ import { NotificationService } from 'src/app/services/notification/notification.
 import { TicketAddDto } from 'src/app/services/ticket/interfaces/ticket-add-dto';
 import { TicketDto } from 'src/app/services/ticket/interfaces/ticket-dto';
 import { TicketService } from 'src/app/services/ticket/ticket.service';
+import { AddTicketEmitMessage } from '../../interfaces/add-ticket-dto';
 
 @Component({
   selector: 'app-blackboard-column',
@@ -28,6 +27,8 @@ export class BlackboardColumnComponent implements OnInit {
   @Input() blackboardUUID!: string;
 
   @Output() deleteColumnEvent = new EventEmitter<string>();
+
+  @Output() addTicketEvent = new EventEmitter<AddTicketEmitMessage>();
 
   isLoading: boolean = false;
 
@@ -114,29 +115,7 @@ export class BlackboardColumnComponent implements OnInit {
   private addTicket(ticket : TicketAddDto) {
     this.isLoading = true;
 
-    this.ticketService.addTicket(ticket, this.blackboardUUID, this.column.uuid)
-    .pipe(
-      tap(() => (this.isLoading = false)),
-      catchError((error) => {
-        this.isLoading = false;
-        this.notificationService.displayNotification(
-          {
-            message: error.error.message
-          },
-          NotificationType.WARNING
-        );
-        throw new Error("Ticket add error");
-      })
-    ).subscribe(Response =>
-      {
-        this.column.tickets.push(Response);
-        this.notificationService.displayNotification(
-          {
-            message: "Ticket created"
-          },
-          NotificationType.INFO
-        );
-    });
+    this.addTicketEvent.emit({column: this.column, ticket})
   }
 
   deleteTicket(ticketUUID: string) {

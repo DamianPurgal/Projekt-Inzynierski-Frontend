@@ -10,6 +10,8 @@ import { ColumnService } from 'src/app/services/column/column.service';
 import { ColumnDto } from 'src/app/services/column/interfaces/column-dto';
 import { NotificationType } from 'src/app/services/notification/enums/notification-type';
 import { NotificationService } from 'src/app/services/notification/notification.service';
+import { TicketService } from 'src/app/services/ticket/ticket.service';
+import { AddTicketEmitMessage } from './interfaces/add-ticket-dto';
 @Component({
   selector: 'app-blackboard-page',
   templateUrl: './blackboard-page.component.html',
@@ -27,9 +29,9 @@ export class BlackboardPageComponent implements OnInit, OnDestroy{
     private blackboardService: BlackboardService,
     private columnService: ColumnService,
     private notificationService: NotificationService,
+    private ticketService: TicketService,
     public dialog: MatDialog,
     private route : ActivatedRoute,
-    private router: Router
     ) {
     this.linkUUID = this.route.snapshot.paramMap.get('uuid') ?? '';
     this.getBlackboardDetailedData();
@@ -195,6 +197,34 @@ export class BlackboardPageComponent implements OnInit, OnDestroy{
             NotificationType.INFO
           );
       });
+  }
+
+  addTicket(ticketToAdd: AddTicketEmitMessage) {
+    this.isLoading = true;
+
+    this.ticketService.addTicket(ticketToAdd.ticket, this.linkUUID, ticketToAdd.column.uuid)
+    .pipe(
+      tap(() => (this.isLoading = false)),
+      catchError((error) => {
+        this.isLoading = false;
+        this.notificationService.displayNotification(
+          {
+            message: error.error.message
+          },
+          NotificationType.WARNING
+        );
+        throw new Error("Ticket add error");
+      })
+    ).subscribe(Response =>
+      {
+        ticketToAdd.column.tickets.push(Response);
+        this.notificationService.displayNotification(
+          {
+            message: "Ticket created"
+          },
+          NotificationType.INFO
+        );
+    });
   }
 
 
