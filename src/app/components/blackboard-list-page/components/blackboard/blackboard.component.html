@@ -3,7 +3,7 @@
   <mat-card-content class="blackboard-description clickable" [routerLink]="['/blackboard', blackboard.uuid]" routerLinkActive="active" ariaCurrentWhenActive="page">
     <p>{{blackboard.description}}</p>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions class="blackboard-buttons">
     <button mat-button (click)="openContributorsDialog()" *ngIf="isBlackboardOwner()">CONTRIBUTORS</button>
     <button mat-button (click)="tryToEditBlackboard()" *ngIf="isBlackboardOwner()">EDIT</button>
     <button mat-button (click)="tryToDeleteBlackboard()" *ngIf="isBlackboardOwner()">DELETE</button>
